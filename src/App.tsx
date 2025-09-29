@@ -1,9 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-
-// Page imports will be added in Phase 4
 import Homepage from './pages/Homepage';
+import Features from './pages/Features';
+import Pricing from './pages/Pricing';
+import Contact from './pages/Contact';
+import Login from './pages/Login';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Status from './pages/Status';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -13,7 +19,14 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Homepage />} />
-            {/* More routes will be added in Phase 4 */}
+            <Route path="/features" element={<Features />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/status" element={<Status />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
