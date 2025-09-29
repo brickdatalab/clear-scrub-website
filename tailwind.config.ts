@@ -14,49 +14,26 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        'cs-black': '#080808',
+        'cs-white': '#FFFFFF',
+        'cs-g-900': '#0D0D0D',
+        'cs-g-800': '#1A1A1A',
+        'cs-g-700': '#333333',
+        'cs-g-500': '#666666',
+        'cs-g-400': '#999999',
+        'cs-g-300': '#CCCCCC',
+        'cs-g-200': '#E0E0E0',
+        'cs-g-100': '#F5F5F5',
+        'cs-accent': '#006F46',
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'body': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+        'subhead': ['18px', { lineHeight: '1.5', fontWeight: '500' }],
+        'heading': ['24px', { lineHeight: '1.3', fontWeight: '600' }],
+        'display': ['32px', { lineHeight: '1.2', fontWeight: '700' }],
       },
       borderRadius: {
         lg: "var(--radius)",
