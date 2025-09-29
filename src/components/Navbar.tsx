@@ -1,0 +1,94 @@
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { Button } from './Button';
+import { Container } from './Container';
+
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="sticky top-0 z-50 bg-cs-white/95 backdrop-blur-sm border-b border-cs-g-200">
+      <Container>
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="text-xl font-bold">
+            <span className="text-cs-accent">Clear</span>
+            <span className="text-cs-black">Scrub</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link to="/features" className="text-cs-g-700 hover:text-cs-black transition-colors">
+              Features
+            </Link>
+            <Link to="/pricing" className="text-cs-g-700 hover:text-cs-black transition-colors">
+              Pricing
+            </Link>
+            <a 
+              href="https://docs.clearscrub.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-cs-g-700 hover:text-cs-black transition-colors"
+            >
+              API Docs
+            </a>
+            <Link to="/contact" className="text-cs-g-700 hover:text-cs-black transition-colors">
+              Contact
+            </Link>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-4">
+            <Link to="/login" className="text-cs-g-700 hover:text-cs-black transition-colors">
+              Sign In
+            </Link>
+            <Link to="/login">
+              <Button variant="primary" size="sm">Get Started</Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden py-4 border-t border-cs-g-200">
+            <div className="flex flex-col gap-4">
+              <Link to="/features" className="text-cs-g-700 hover:text-cs-black py-2">
+                Features
+              </Link>
+              <Link to="/pricing" className="text-cs-g-700 hover:text-cs-black py-2">
+                Pricing
+              </Link>
+              <a 
+                href="https://docs.clearscrub.io" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-cs-g-700 hover:text-cs-black py-2"
+              >
+                API Docs
+              </a>
+              <Link to="/contact" className="text-cs-g-700 hover:text-cs-black py-2">
+                Contact
+              </Link>
+              <Link to="/login" className="text-cs-g-700 hover:text-cs-black py-2">
+                Sign In
+              </Link>
+              <Link to="/login">
+                <Button variant="primary" size="md" className="w-full">Get Started</Button>
+              </Link>
+            </div>
+          </div>
+        )}
+      </Container>
+    </nav>
+  );
+}
