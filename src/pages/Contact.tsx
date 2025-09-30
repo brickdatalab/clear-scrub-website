@@ -82,9 +82,9 @@ export default function Contact() {
 
             <div className="mt-8 pt-8 border-t border-cs-g-200 text-center">
               <p className="text-body text-cs-g-500">
-                Or email us directly at{' '}
-                <a href="mailto:hello@clearscrub.io" className="text-cs-accent hover:underline">
-                  hello@clearscrub.io
+                Need help?{' '}
+                <a href="/help-center" className="text-cs-accent hover:underline">
+                  Visit our Help Center
                 </a>
               </p>
             </div>
