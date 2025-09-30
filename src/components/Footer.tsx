@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-cs-g-900 text-cs-white py-16">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Product */}
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
@@ -75,16 +75,6 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-semibold mb-4">Get in Touch</h3>
-            <p className="text-cs-g-400">
-              <a href="mailto:hello@clearscrub.io" className="hover:text-cs-white transition-colors">
-                hello@clearscrub.io
-              </a>
-            </p>
           </div>
         </div>
 
