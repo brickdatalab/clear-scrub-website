@@ -12,17 +12,20 @@ export default function Features() {
       bullets: [
         "Multi-format support (PDF, CSV, Excel)",
         "OCR for scanned documents",
-        "Automatic field detection"
+        "Automatic field detection",
+        "Merchant name disambiguation",
+        "Category classification",
+        "Duplicate detection"
       ]
     },
     {
       icon: <Repeat size={32} />,
-      title: "Transaction Normalization",
-      description: "Standardize merchant names, categorize spending, and detect patterns.",
+      title: "Deep Verification",
+      description: "Comprehensive credit risk assessment to identify financial red flags and lending exposure.",
       bullets: [
-        "Merchant name disambiguation",
-        "Category classification",
-        "Duplicate detection"
+        "Business loan default history detection",
+        "Active bankruptcy status screening",
+        "Debt settlement tracking on past obligations"
       ]
     },
     {
