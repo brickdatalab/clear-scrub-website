@@ -24,7 +24,6 @@ export default function Pricing() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Pay As You Go */}
             <Card hover className="p-8 border-2 border-cs-accent h-full">
-              <div className="text-cs-accent text-sm font-semibold mb-2">MOST POPULAR</div>
               <h2 className="text-heading mb-4">Pay As You Go</h2>
               <div className="mb-6">
                 <span className="text-[48px] font-bold text-cs-accent">$0.50</span>
