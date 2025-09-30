@@ -4,19 +4,23 @@ import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { HeaderFlowConnector } from '../components/HeaderFlowConnector';
 
 export default function Homepage() {
   return (
     <>
       {/* Hero Section */}
       <Section background="gray" className="min-h-[90vh] flex items-center relative overflow-hidden">
+        {/* Flow Connector Background */}
+        <HeaderFlowConnector />
+        
         {/* Subtle geometric pattern background */}
         <div className="absolute inset-0 opacity-30" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,111,70,0.15) 1px, transparent 0)`,
           backgroundSize: '20px 20px'
         }}></div>
         
-        <Container className="relative">
+        <Container className="relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-[48px] md:text-[64px] font-bold leading-tight mb-6">
               Bank Statement Underwriting in Seconds, Not Hours
