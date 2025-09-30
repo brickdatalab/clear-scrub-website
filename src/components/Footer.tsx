@@ -52,6 +52,11 @@ export function Footer() {
                   Status
                 </Link>
               </li>
+              <li>
+                <Link to="/blog" className="text-cs-g-400 hover:text-cs-white transition-colors">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
 
