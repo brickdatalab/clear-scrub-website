@@ -5,6 +5,7 @@ import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { Label } from '../components/ui/label';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -83,21 +84,33 @@ export default function Login() {
   };
 
   return (
-    <Section background="gray" className="pt-32 min-h-screen flex items-center">
+    <Section background="white" className="pt-32 min-h-screen flex items-center">
       <Container>
         <div className="max-w-md mx-auto">
-          <Card>
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h1 className="text-display mb-3">
+              {isSignUp ? 'Create Your Account' : 'Welcome Back'}
+            </h1>
+            <p className="text-body text-cs-g-500">
+              {isSignUp 
+                ? 'Start processing bank statements in seconds' 
+                : 'Sign in to access your dashboard'}
+            </p>
+          </div>
+
+          <Card className="shadow-lg">
             {/* Tabs */}
-            <div className="flex gap-4 mb-8 border-b border-cs-g-200">
+            <div className="flex gap-1 mb-8 p-1 bg-cs-g-100 rounded-lg">
               <button
                 onClick={() => {
                   setIsSignUp(false);
                   setError('');
                 }}
-                className={`pb-3 px-4 font-medium transition-colors ${
+                className={`flex-1 py-2.5 px-4 rounded-md font-medium transition-all ${
                   !isSignUp 
-                    ? 'text-cs-accent border-b-2 border-cs-accent' 
-                    : 'text-cs-g-500'
+                    ? 'bg-cs-white text-cs-accent shadow-sm' 
+                    : 'text-cs-g-500 hover:text-cs-g-700'
                 }`}
               >
                 Sign In
@@ -107,10 +120,10 @@ export default function Login() {
                   setIsSignUp(true);
                   setError('');
                 }}
-                className={`pb-3 px-4 font-medium transition-colors ${
+                className={`flex-1 py-2.5 px-4 rounded-md font-medium transition-all ${
                   isSignUp 
-                    ? 'text-cs-accent border-b-2 border-cs-accent' 
-                    : 'text-cs-g-500'
+                    ? 'bg-cs-white text-cs-accent shadow-sm' 
+                    : 'text-cs-g-500 hover:text-cs-g-700'
                 }`}
               >
                 Sign Up
@@ -123,15 +136,17 @@ export default function Login() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               {isSignUp && (
                 <div>
-                  <label className="block text-body font-medium mb-2">Name</label>
+                  <Label htmlFor="name" className="text-cs-g-700">Full Name</Label>
                   <input
+                    id="name"
                     type="text"
                     required={isSignUp}
                     disabled={loading}
-                    className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent disabled:opacity-50"
+                    className="w-full px-4 py-3 mt-1.5 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                    placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                   />
@@ -139,24 +154,28 @@ export default function Login() {
               )}
 
               <div>
-                <label className="block text-body font-medium mb-2">Email</label>
+                <Label htmlFor="email" className="text-cs-g-700">Email Address</Label>
                 <input
+                  id="email"
                   type="email"
                   required
                   disabled={loading}
-                  className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent disabled:opacity-50"
+                  className="w-full px-4 py-3 mt-1.5 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                  placeholder="you@company.com"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                 />
               </div>
 
               <div>
-                <label className="block text-body font-medium mb-2">Password</label>
+                <Label htmlFor="password" className="text-cs-g-700">Password</Label>
                 <input
+                  id="password"
                   type="password"
                   required
                   disabled={loading}
-                  className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent disabled:opacity-50"
+                  className="w-full px-4 py-3 mt-1.5 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                  placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) => setFormData({...formData, password: e.target.value})}
                 />
@@ -164,12 +183,14 @@ export default function Login() {
 
               {isSignUp && (
                 <div>
-                  <label className="block text-body font-medium mb-2">Confirm Password</label>
+                  <Label htmlFor="confirmPassword" className="text-cs-g-700">Confirm Password</Label>
                   <input
+                    id="confirmPassword"
                     type="password"
                     required={isSignUp}
                     disabled={loading}
-                    className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent disabled:opacity-50"
+                    className="w-full px-4 py-3 mt-1.5 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                    placeholder="••••••••"
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
                   />
@@ -178,7 +199,7 @@ export default function Login() {
 
               {!isSignUp && (
                 <div className="text-right">
-                  <button type="button" className="text-cs-accent hover:underline text-sm">
+                  <button type="button" className="text-cs-accent hover:underline text-sm font-medium">
                     Forgot password?
                   </button>
                 </div>
@@ -188,7 +209,7 @@ export default function Login() {
                 type="submit" 
                 variant="primary" 
                 size="lg" 
-                className="w-full"
+                className="w-full mt-6"
                 disabled={loading}
               >
                 {loading ? 'Loading...' : (isSignUp ? 'Create Account' : 'Sign In')}
@@ -198,7 +219,7 @@ export default function Login() {
             {isSignUp && (
               <p className="mt-6 text-sm text-center text-cs-g-500">
                 By signing up, you agree to our{' '}
-                <a href="/terms" className="text-cs-accent hover:underline">Terms of Service</a>
+                <a href="/terms" className="text-cs-accent hover:underline font-medium">Terms of Service</a>
               </p>
             )}
           </Card>
