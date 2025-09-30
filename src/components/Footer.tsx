@@ -49,7 +49,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/status" className="text-cs-g-400 hover:text-cs-white transition-colors">
-                  Status
+                  Platform Status
                 </Link>
               </li>
               <li>
