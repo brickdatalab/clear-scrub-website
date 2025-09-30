@@ -99,7 +99,7 @@ export default function Login() {
             </p>
           </div>
 
-          <Card className="shadow-lg">
+          <Card className="shadow-lg min-h-[600px]">
             {/* Tabs */}
             <div className="flex gap-1 mb-8 p-1 bg-cs-g-100 rounded-lg">
               <button
