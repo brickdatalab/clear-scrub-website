@@ -39,23 +39,14 @@ export default function Features() {
       ]
     },
     {
-      icon: <Zap size={32} />,
-      title: "Real-Time Processing",
-      description: "Process statements in under 30 seconds with our optimized pipeline.",
-      bullets: [
-        "Parallel processing",
-        "Sub-30 second response times",
-        "Batch processing support"
-      ]
-    },
-    {
       icon: <LinkIcon size={32} />,
-      title: "CRM Integrations",
-      description: "Export clean data directly to your loan origination system or CRM.",
+      title: "Integrations & Extensions",
+      description: "Seamlessly connect to your workflow with powerful integrations and cloud storage extensions.",
       bullets: [
         "REST API with webhooks",
-        "CSV/Excel export",
-        "Custom integration support"
+        "Zip Batch processing",
+        "CRM Connections",
+        "Google Drive, Microsoft OneDrive and Dropbox Extensions"
       ]
     },
     {
