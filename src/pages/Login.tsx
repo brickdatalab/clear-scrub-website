@@ -1,11 +1,16 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { supabase } from '../integrations/supabase/client';
 import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 
 export default function Login() {
+  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,11 +18,68 @@ export default function Login() {
     confirmPassword: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(isSignUp ? 'Sign up' : 'Sign in', formData);
-    // TODO: Connect to Supabase auth in Phase 6
-    alert('Auth will be connected in Phase 6!');
+    setError('');
+    setLoading(true);
+
+    try {
+      if (isSignUp) {
+        // Sign up validation
+        if (formData.password !== formData.confirmPassword) {
+          setError('Passwords do not match');
+          setLoading(false);
+          return;
+        }
+
+        if (formData.password.length < 6) {
+          setError('Password must be at least 6 characters');
+          setLoading(false);
+          return;
+        }
+
+        // Sign up with Supabase
+        const { data, error: signUpError } = await supabase.auth.signUp({
+          email: formData.email,
+          password: formData.password,
+          options: {
+            data: {
+              name: formData.name,
+            },
+          },
+        });
+
+        if (signUpError) throw signUpError;
+
+        if (data.user) {
+          // Check if email confirmation is required
+          if (data.user.identities && data.user.identities.length === 0) {
+            setError('An account with this email already exists');
+          } else {
+            alert('Account created! Please check your email to verify your account.');
+            setIsSignUp(false);
+            setFormData({ name: '', email: '', password: '', confirmPassword: '' });
+          }
+        }
+      } else {
+        // Sign in with Supabase
+        const { data, error: signInError } = await supabase.auth.signInWithPassword({
+          email: formData.email,
+          password: formData.password,
+        });
+
+        if (signInError) throw signInError;
+
+        if (data.user) {
+          // Redirect to dashboard page
+          navigate('/dashboard');
+        }
+      }
+    } catch (err: any) {
+      setError(err.message || 'An error occurred');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -28,7 +90,10 @@ export default function Login() {
             {/* Tabs */}
             <div className="flex gap-4 mb-8 border-b border-cs-g-200">
               <button
-                onClick={() => setIsSignUp(false)}
+                onClick={() => {
+                  setIsSignUp(false);
+                  setError('');
+                }}
                 className={`pb-3 px-4 font-medium transition-colors ${
                   !isSignUp 
                     ? 'text-cs-accent border-b-2 border-cs-accent' 
@@ -38,7 +103,10 @@ export default function Login() {
                 Sign In
               </button>
               <button
-                onClick={() => setIsSignUp(true)}
+                onClick={() => {
+                  setIsSignUp(true);
+                  setError('');
+                }}
                 className={`pb-3 px-4 font-medium transition-colors ${
                   isSignUp 
                     ? 'text-cs-accent border-b-2 border-cs-accent' 
@@ -49,6 +117,12 @@ export default function Login() {
               </button>
             </div>
 
+            {error && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-sm text-red-600">{error}</p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               {isSignUp && (
                 <div>
@@ -56,7 +130,8 @@ export default function Login() {
                   <input
                     type="text"
                     required={isSignUp}
-                    className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent"
+                    disabled={loading}
+                    className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent disabled:opacity-50"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                   />
@@ -68,7 +143,8 @@ export default function Login() {
                 <input
                   type="email"
                   required
-                  className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent"
+                  disabled={loading}
+                  className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent disabled:opacity-50"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                 />
@@ -79,7 +155,8 @@ export default function Login() {
                 <input
                   type="password"
                   required
-                  className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent"
+                  disabled={loading}
+                  className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent disabled:opacity-50"
                   value={formData.password}
                   onChange={(e) => setFormData({...formData, password: e.target.value})}
                 />
@@ -91,7 +168,8 @@ export default function Login() {
                   <input
                     type="password"
                     required={isSignUp}
-                    className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent"
+                    disabled={loading}
+                    className="w-full px-4 py-3 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent disabled:opacity-50"
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
                   />
@@ -106,8 +184,14 @@ export default function Login() {
                 </div>
               )}
 
-              <Button type="submit" variant="primary" size="lg" className="w-full">
-                {isSignUp ? 'Create Account' : 'Sign In'}
+              <Button 
+                type="submit" 
+                variant="primary" 
+                size="lg" 
+                className="w-full"
+                disabled={loading}
+              >
+                {loading ? 'Loading...' : (isSignUp ? 'Create Account' : 'Sign In')}
               </Button>
             </form>
 
