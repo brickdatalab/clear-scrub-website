@@ -51,7 +51,7 @@ export default function Pricing() {
                   <span className="text-body">CRM integrations</span>
                 </li>
               </ul>
-              <Link to="/login">
+              <Link to="/login?mode=signup">
                 <Button variant="primary" className="w-full">Start Free Trial</Button>
               </Link>
             </Card>
