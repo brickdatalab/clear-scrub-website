@@ -84,11 +84,11 @@ export default function Login() {
   };
 
   return (
-    <Section background="white" className="pt-32 min-h-screen flex items-center">
+    <Section background="white" className="pt-32 pb-20">
       <Container>
         <div className="max-w-md mx-auto">
-          {/* Header */}
-          <div className="text-center mb-8">
+          {/* Header - Fixed Height */}
+          <div className="text-center mb-8 h-24 flex flex-col justify-center">
             <h1 className="text-display mb-3">
               {isSignUp ? 'Create Your Account' : 'Welcome Back'}
             </h1>
@@ -99,7 +99,7 @@ export default function Login() {
             </p>
           </div>
 
-          <Card className="shadow-lg min-h-[600px]">
+          <Card className="shadow-lg">
             {/* Tabs */}
             <div className="flex gap-1 mb-8 p-1 bg-cs-g-100 rounded-lg">
               <button
