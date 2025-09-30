@@ -23,9 +23,9 @@ export default function Features() {
       title: "Deep Verification",
       description: "Comprehensive credit risk assessment to identify financial red flags and lending exposure.",
       bullets: [
-        "Business loan default history detection",
-        "Active bankruptcy status screening",
-        "Debt settlement tracking on past obligations"
+        "MCA Loan default detection",
+        "Open bankruptcy screening",
+        "Debt settlement & restructure discovery"
       ]
     },
     {
