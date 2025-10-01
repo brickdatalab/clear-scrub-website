@@ -19,21 +19,21 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/features" className="text-cs-g-700 hover:text-cs-black transition-colors">
+            <Link to="/features" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md">
               Features
             </Link>
-            <Link to="/pricing" className="text-cs-g-700 hover:text-cs-black transition-colors">
+            <Link to="/pricing" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md">
               Pricing
             </Link>
             <a 
               href="https://docs.clearscrub.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-cs-g-700 hover:text-cs-black transition-colors"
+              className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md"
             >
               API Docs
             </a>
-            <Link to="/contact" className="text-cs-g-700 hover:text-cs-black transition-colors">
+            <Link to="/contact" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md">
               Contact
             </Link>
           </div>
@@ -62,24 +62,24 @@ export function Navbar() {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-cs-g-200">
             <div className="flex flex-col gap-4">
-              <Link to="/features" className="text-cs-g-700 hover:text-cs-black py-2">
+              <Link to="/features" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold py-2 px-4 rounded-md transition-all">
                 Features
               </Link>
-              <Link to="/pricing" className="text-cs-g-700 hover:text-cs-black py-2">
+              <Link to="/pricing" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold py-2 px-4 rounded-md transition-all">
                 Pricing
               </Link>
               <a 
                 href="https://docs.clearscrub.io" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-cs-g-700 hover:text-cs-black py-2"
+                className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold py-2 px-4 rounded-md transition-all"
               >
                 API Docs
               </a>
-              <Link to="/contact" className="text-cs-g-700 hover:text-cs-black py-2">
+              <Link to="/contact" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold py-2 px-4 rounded-md transition-all">
                 Contact
               </Link>
-              <Link to="/login" className="text-cs-g-700 hover:text-cs-black py-2">
+              <Link to="/login" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold py-2 px-4 rounded-md transition-all">
                 Sign In
               </Link>
               <Link to="/login">
