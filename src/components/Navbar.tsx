@@ -33,9 +33,6 @@ export function Navbar() {
             >
               API Docs
             </a>
-            <Link to="/contact" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md">
-              Contact
-            </Link>
           </div>
 
           {/* CTA Buttons */}
@@ -76,9 +73,6 @@ export function Navbar() {
               >
                 API Docs
               </a>
-              <Link to="/contact" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold py-2 px-4 rounded-md transition-all">
-                Contact
-              </Link>
               <Link to="/login" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold py-2 px-4 rounded-md transition-all">
                 Sign In
               </Link>

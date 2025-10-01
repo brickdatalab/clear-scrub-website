@@ -29,12 +29,11 @@ export default function Homepage() {
               Process merchant applications at half the cost with real technology. 
               Built for MCA underwriters who need speed without compromise.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/login">
-                <Button variant="primary" size="lg">Start Free Trial</Button>
-              </Link>
+            <div className="flex justify-center">
               <Link to="/pricing">
-                <Button variant="outline" size="lg">View Pricing</Button>
+                <button className="px-8 py-4 text-lg font-semibold border-2 border-cs-g-300 text-cs-g-700 rounded-lg hover:bg-cs-accent hover:text-white hover:border-cs-accent transition-all">
+                  View Pricing
+                </button>
               </Link>
             </div>
           </div>
