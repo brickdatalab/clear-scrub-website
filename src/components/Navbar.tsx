@@ -38,7 +38,7 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <Link to="/login">
-              <button className="h-12 px-6 border-2 border-cs-g-300 text-cs-g-700 rounded-lg hover:bg-cs-accent hover:text-white hover:border-cs-accent hover:font-bold transition-all">
+              <button className="h-12 px-6 bg-cs-accent text-white rounded-md hover:bg-transparent hover:text-cs-g-700 hover:border-2 hover:border-cs-g-300 hover:font-bold transition-all">
                 Sign In
               </button>
             </Link>
