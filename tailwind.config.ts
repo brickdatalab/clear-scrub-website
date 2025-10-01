@@ -27,7 +27,7 @@ export default {
         'cs-accent': '#006F46',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['KH Teka', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'body': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
