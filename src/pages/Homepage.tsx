@@ -5,6 +5,9 @@ import { Container } from '../components/Container';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { HeaderFlowConnector } from '../components/HeaderFlowConnector';
+import { TransactionNetwork } from '../components/TransactionNetwork';
+import { DataEnrichmentNetwork } from '../components/DataEnrichmentNetwork';
+import { ApiEcosystemNetwork } from '../components/ApiEcosystemNetwork';
 
 export default function Homepage() {
   return (
@@ -148,9 +151,7 @@ export default function Homepage() {
           <div className="space-y-24">
             {/* Feature 1: Transaction Normalization */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="bg-cs-g-100 rounded-2xl h-80 flex items-center justify-center">
-                <p className="text-cs-g-400">[Screenshot: Transaction Table]</p>
-              </div>
+              <TransactionNetwork />
               <div>
                 <h2 className="text-display mb-4">Transaction Normalization</h2>
                 <p className="text-body text-cs-g-500 mb-6">
@@ -175,16 +176,14 @@ export default function Homepage() {
                   <Button variant="outline">Learn More</Button>
                 </Link>
               </div>
-              <div className="bg-cs-g-100 rounded-2xl h-80 flex items-center justify-center order-1 md:order-2">
-                <p className="text-cs-g-400">[Screenshot: Data Enrichment]</p>
+              <div className="order-1 md:order-2">
+                <DataEnrichmentNetwork />
               </div>
             </div>
 
             {/* Feature 3: API Integration */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="bg-cs-g-100 rounded-2xl h-80 flex items-center justify-center">
-                <p className="text-cs-g-400">[Screenshot: API Code]</p>
-              </div>
+              <ApiEcosystemNetwork />
               <div>
                 <h2 className="text-display mb-4">API-First Architecture</h2>
                 <p className="text-body text-cs-g-500 mb-6">
