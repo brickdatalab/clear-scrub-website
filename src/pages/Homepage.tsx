@@ -90,13 +90,27 @@ export default function Homepage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-            {/* Add connecting line between steps on desktop */}
+            {/* Base connecting line - always visible */}
             <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-cs-g-300 -z-10" />
             
+            {/* Animated connecting line from Upload to Process */}
+            <svg className="hidden md:block absolute top-8 left-0 w-1/3 h-0.5 pointer-events-none opacity-0 transition-opacity duration-500 group-hover/upload:opacity-100" style={{ left: 'calc(33.333% - 8rem)', width: 'calc(33.333% + 4rem)' }}>
+              <line x1="0" y1="1" x2="100%" y2="1" stroke="#006F46" strokeWidth="3" strokeDasharray="8,4">
+                <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
+              </line>
+            </svg>
+            
+            {/* Animated connecting line from Process to Export */}
+            <svg className="hidden md:block absolute top-8 w-1/3 h-0.5 pointer-events-none opacity-0 transition-opacity duration-500 group-hover/process:opacity-100" style={{ left: 'calc(66.666% - 8rem)', width: 'calc(33.333% + 4rem)' }}>
+              <line x1="0" y1="1" x2="100%" y2="1" stroke="#006F46" strokeWidth="3" strokeDasharray="8,4">
+                <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
+              </line>
+            </svg>
+            
             {/* Step 1: Upload */}
-            <div className="text-center relative">
-              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Upload className="text-white" size={28} />
+            <div className="text-center relative group/upload cursor-pointer">
+              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover/upload:scale-110 group-hover/upload:shadow-lg group-hover/upload:shadow-cs-accent/50">
+                <Upload className="text-white transition-transform duration-300 group-hover/upload:scale-110" size={28} />
               </div>
               <h3 className="text-heading mb-2">Upload</h3>
               <p className="text-body text-cs-g-500">
@@ -105,9 +119,9 @@ export default function Homepage() {
             </div>
             
             {/* Step 2: Process */}
-            <div className="text-center relative">
-              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Cpu className="text-white" size={28} />
+            <div className="text-center relative group/process cursor-pointer">
+              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover/process:scale-110 group-hover/process:shadow-lg group-hover/process:shadow-cs-accent/50">
+                <Cpu className="text-white transition-transform duration-300 group-hover/process:rotate-90" size={28} />
               </div>
               <h3 className="text-heading mb-2">Process</h3>
               <p className="text-body text-cs-g-500">
@@ -116,9 +130,9 @@ export default function Homepage() {
             </div>
             
             {/* Step 3: Export */}
-            <div className="text-center relative">
-              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Download className="text-white" size={28} />
+            <div className="text-center relative group/export cursor-pointer">
+              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover/export:scale-110 group-hover/export:shadow-lg group-hover/export:shadow-cs-accent/50">
+                <Download className="text-white transition-transform duration-300 group-hover/export:translate-y-1" size={28} />
               </div>
               <h3 className="text-heading mb-2">Export</h3>
               <p className="text-body text-cs-g-500">
