@@ -31,12 +31,10 @@ export function NetworkVisualization({ cards, connections }: NetworkVisualizatio
         entries.forEach((entry) => {
           if (entry.isIntersecting && !isVisible) {
             setIsVisible(true);
-            // Animate connections one by one with stagger
-            connections.forEach((_, index) => {
-              setTimeout(() => {
-                setAnimatedConnections((prev) => new Set([...prev, index]));
-              }, index * 300);
-            });
+            // Simple fade in for all connections
+            setTimeout(() => {
+              setAnimatedConnections(new Set(connections.map((_, i) => i)));
+            }, 200);
           }
         });
       },
@@ -49,25 +47,6 @@ export function NetworkVisualization({ cards, connections }: NetworkVisualizatio
 
     return () => observer.disconnect();
   }, [connections, isVisible]);
-  
-  // Continuous subtle pulse animation for connections
-  useEffect(() => {
-    if (!isVisible || animatedConnections.size === 0) return;
-    
-    const interval = setInterval(() => {
-      const paths = svgRef.current?.querySelectorAll('path');
-      paths?.forEach((path, index) => {
-        if (animatedConnections.has(index)) {
-          path.style.strokeWidth = '3';
-          setTimeout(() => {
-            path.style.strokeWidth = '2';
-          }, 500);
-        }
-      });
-    }, 3000);
-    
-    return () => clearInterval(interval);
-  }, [isVisible, animatedConnections]);
 
   const getCardPosition = (cardId: string) => {
     const card = cards.find((c) => c.id === cardId);
@@ -89,35 +68,27 @@ export function NetworkVisualization({ cards, connections }: NetworkVisualizatio
       >
         <defs>
           <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#006F46" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#00AA6C" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#006F46" stopOpacity="0.8" />
+            <stop offset="0%" stopColor="#006F46" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#00AA6C" stopOpacity="0.6" />
           </linearGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
         </defs>
         {connections.map((connection, index) => {
           const from = getCardPosition(connection.from);
           const to = getCardPosition(connection.to);
           
-          // Calculate control points for smooth bezier curve
+          // Simple gentle curve - mostly horizontal/vertical
           const dx = to.x - from.x;
           const dy = to.y - from.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          const offset = Math.min(distance * 0.3, 15);
+          const midX = from.x + dx * 0.5;
           
-          const cx1 = from.x + offset;
-          const cy1 = from.y + (dy * 0.2);
-          const cx2 = to.x - offset;
-          const cy2 = to.y - (dy * 0.2);
+          // Gentle curve with minimal offset
+          const curve = Math.abs(dy) > 10 ? 8 : 4;
+          const cx1 = from.x + Math.min(Math.abs(dx) * 0.3, curve);
+          const cy1 = from.y;
+          const cx2 = to.x - Math.min(Math.abs(dx) * 0.3, curve);
+          const cy2 = to.y;
 
           const isAnimated = animatedConnections.has(index);
-          const pathLength = distance * 1.5;
 
           return (
             <path
@@ -127,11 +98,8 @@ export function NetworkVisualization({ cards, connections }: NetworkVisualizatio
               stroke="url(#connectionGradient)"
               strokeWidth="2"
               strokeLinecap="round"
-              filter="url(#glow)"
-              strokeDasharray={`${pathLength} ${pathLength}`}
-              strokeDashoffset={isAnimated ? 0 : pathLength}
               style={{
-                transition: 'stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1), stroke-width 0.5s ease',
+                transition: 'opacity 0.8s ease',
                 opacity: isAnimated ? 1 : 0,
               }}
             />
@@ -155,17 +123,17 @@ export function NetworkVisualization({ cards, connections }: NetworkVisualizatio
             }}
           >
             {card.prominent ? (
-              <div className="bg-white rounded-xl px-4 py-3 shadow-xl border border-cs-g-200 min-w-[120px] text-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-xl px-4 py-3 shadow-lg border border-cs-g-200 min-w-[120px] text-center transition-all duration-300">
                 {card.icon && (
-                  <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-cs-accent to-[#00AA6C] flex items-center justify-center shadow-md">
+                  <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-cs-accent to-[#00AA6C] flex items-center justify-center">
                     <span className="text-white text-base">{card.icon}</span>
                   </div>
                 )}
                 <p className="text-sm font-semibold text-cs-black">{card.label}</p>
               </div>
             ) : (
-              <div className="bg-cs-g-200/50 rounded-lg px-3 py-2 border border-cs-g-300/60 min-w-[90px] text-center backdrop-blur-sm">
-                <p className="text-xs text-cs-g-500">{card.label}</p>
+              <div className="bg-cs-g-100/80 rounded-lg px-3 py-2 border border-cs-g-200/60 min-w-[90px] text-center backdrop-blur-sm">
+                <p className="text-xs text-cs-g-400">{card.label}</p>
               </div>
             )}
           </div>
