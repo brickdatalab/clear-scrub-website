@@ -27,13 +27,13 @@ export default {
         'cs-accent': '#006F46',
       },
       fontFamily: {
-        sans: ['KH Teka', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'body': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
-        'subhead': ['18px', { lineHeight: '1.5', fontWeight: '500' }],
-        'heading': ['24px', { lineHeight: '1.3', fontWeight: '600' }],
-        'display': ['32px', { lineHeight: '1.2', fontWeight: '700' }],
+        'subhead': ['18px', { lineHeight: '1.5', fontWeight: '700' }],
+        'heading': ['24px', { lineHeight: '1.3', fontWeight: '700' }],
+        'display': ['32px', { lineHeight: '1.2', fontWeight: '800' }],
       },
       borderRadius: {
         lg: "var(--radius)",
