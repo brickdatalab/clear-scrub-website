@@ -37,11 +37,8 @@ export function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/login" className="text-cs-g-700 hover:text-cs-black transition-colors">
-              Sign In
-            </Link>
             <Link to="/login">
-              <Button variant="primary" size="sm">Get Started</Button>
+              <Button variant="primary" size="sm" className="hover:bg-cs-accent/80 hover:rounded-md transition-all">Sign In</Button>
             </Link>
           </div>
 
@@ -73,11 +70,8 @@ export function Navbar() {
               >
                 API Docs
               </a>
-              <Link to="/login" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold py-2 px-4 rounded-md transition-all">
-                Sign In
-              </Link>
               <Link to="/login">
-                <Button variant="primary" size="md" className="w-full">Get Started</Button>
+                <Button variant="primary" size="md" className="w-full hover:bg-cs-accent/80 hover:rounded-md transition-all">Sign In</Button>
               </Link>
             </div>
           </div>
