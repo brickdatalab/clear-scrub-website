@@ -55,6 +55,7 @@ export default function Login() {
             data: {
               name: formData.name,
             },
+            emailRedirectTo: `${window.location.origin}/dashboard`,
           },
         });
 
@@ -65,9 +66,8 @@ export default function Login() {
           if (data.user.identities && data.user.identities.length === 0) {
             setError('An account with this email already exists');
           } else {
-            alert('Account created! Please check your email to verify your account.');
-            setIsSignUp(false);
-            setFormData({ name: '', email: '', password: '', confirmPassword: '' });
+            // Redirect to dashboard after successful signup
+            navigate('/dashboard');
           }
         }
       } else {
