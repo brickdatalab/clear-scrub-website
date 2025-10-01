@@ -31,7 +31,7 @@ export default function Homepage() {
             </p>
             <div className="flex justify-center">
               <Link to="/pricing">
-                <button className="px-8 py-4 text-lg font-semibold bg-cs-accent text-white rounded-md hover:bg-transparent hover:text-cs-g-700 hover:border-2 hover:border-cs-g-300 transition-all">
+                <button className="px-8 py-4 text-lg font-semibold bg-cs-accent text-white rounded-lg border-2 border-cs-accent hover:bg-transparent hover:text-cs-g-700 hover:border-cs-g-300 transition-colors">
                   View Pricing
                 </button>
               </Link>
