@@ -7,14 +7,138 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instantiate createClient with right options
-  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
+  // Auto-generated from Supabase on 2025-10-01
   __InternalSupabase: {
     PostgrestVersion: "13.0.5"
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          id: string
+          email: string
+          full_name: string | null
+          avatar_url: string | null
+          phone: string | null
+          company_role: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id: string
+          email: string
+          full_name?: string | null
+          avatar_url?: string | null
+          phone?: string | null
+          company_role?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          email?: string
+          full_name?: string | null
+          avatar_url?: string | null
+          phone?: string | null
+          company_role?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      companies: {
+        Row: {
+          id: string
+          user_id: string
+          name: string
+          company_id: string | null
+          ein: string | null
+          business_type: string | null
+          industry: string | null
+          phone: string | null
+          email: string | null
+          website: string | null
+          address_line1: string | null
+          address_line2: string | null
+          city: string | null
+          state: string | null
+          zip_code: string | null
+          country: string | null
+          policy_result: string | null
+          crm_sync_status: string | null
+          is_starred: boolean | null
+          risk_score: number | null
+          risk_level: string | null
+          underwriting_status: string | null
+          notes: string | null
+          tags: string[] | null
+          received_at: string | null
+          last_activity_at: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          name: string
+          company_id?: string | null
+          ein?: string | null
+          business_type?: string | null
+          industry?: string | null
+          phone?: string | null
+          email?: string | null
+          website?: string | null
+          address_line1?: string | null
+          address_line2?: string | null
+          city?: string | null
+          state?: string | null
+          zip_code?: string | null
+          country?: string | null
+          policy_result?: string | null
+          crm_sync_status?: string | null
+          is_starred?: boolean | null
+          risk_score?: number | null
+          risk_level?: string | null
+          underwriting_status?: string | null
+          notes?: string | null
+          tags?: string[] | null
+          received_at?: string | null
+          last_activity_at?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          name?: string
+          company_id?: string | null
+          ein?: string | null
+          business_type?: string | null
+          industry?: string | null
+          phone?: string | null
+          email?: string | null
+          website?: string | null
+          address_line1?: string | null
+          address_line2?: string | null
+          city?: string | null
+          state?: string | null
+          zip_code?: string | null
+          country?: string | null
+          policy_result?: string | null
+          crm_sync_status?: string | null
+          is_starred?: boolean | null
+          risk_score?: number | null
+          risk_level?: string | null
+          underwriting_status?: string | null
+          notes?: string | null
+          tags?: string | null
+          received_at?: string | null
+          last_activity_at?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
