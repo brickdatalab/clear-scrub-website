@@ -85,7 +85,7 @@ export default function Homepage() {
       <Section background="gray">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-display mb-4">How It Works</h2>
+            <h2 className="text-[48px] md:text-[64px] font-bold leading-tight mb-4">How It Works</h2>
             <p className="text-subhead text-cs-g-500">Three steps to cleaner data</p>
           </div>
           
@@ -190,7 +190,7 @@ export default function Homepage() {
       {/* Positioning Section */}
       <Section background="gray">
         <Container>
-          <h2 className="text-display text-center mb-16">Built Different</h2>
+          <h2 className="text-[48px] md:text-[64px] font-bold leading-tight text-center mb-16">Built Different</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <Card>
