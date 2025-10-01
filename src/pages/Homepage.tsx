@@ -231,31 +231,16 @@ export default function Homepage() {
       </Section>
 
       {/* Pricing Preview Section */}
-      <Section background="white">
+      <Section background="dark">
         <Container>
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-display mb-4">Simple, Transparent Pricing</h2>
             <p className="text-[40px] font-bold text-cs-accent mb-4">$0.50 per PDF</p>
-            <p className="text-body text-cs-g-500 mb-8">
+            <p className="text-body text-cs-g-400 mb-8">
               No monthly fees. No hidden costs. Pay only for what you process.
             </p>
             <Link to="/login">
-              <Button variant="primary" size="lg">Get Started</Button>
-            </Link>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Final CTA Section */}
-      <Section background="dark">
-        <Container>
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-display mb-4">Ready to Speed Up Your Underwriting?</h2>
-            <p className="text-subhead text-cs-g-400 mb-8">
-              Start processing bank statements faster. No credit card required.
-            </p>
-            <Link to="/login">
-              <Button variant="primary" size="lg">Create Free Account</Button>
+              <Button variant="primary" size="lg">Create Account</Button>
             </Link>
           </div>
         </Container>
