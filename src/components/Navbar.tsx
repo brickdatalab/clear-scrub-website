@@ -19,17 +19,17 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/features" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
+            <Link to="/features" className="font-sans text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
               Features
             </Link>
-            <Link to="/pricing" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
+            <Link to="/pricing" className="font-sans text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
               Pricing
             </Link>
             <a 
               href="https://docs.clearscrub.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center"
+              className="font-sans text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center"
             >
               API Docs
             </a>
@@ -38,7 +38,7 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <Link to="/login">
-              <button className="h-12 px-6 bg-cs-accent text-white rounded-lg border-2 border-cs-accent hover:bg-transparent hover:text-cs-g-700 hover:border-cs-g-300 hover:font-bold transition-colors">
+              <button className="font-sans font-bold h-12 px-6 bg-cs-accent text-white rounded-lg border-2 border-cs-accent hover:bg-transparent hover:text-cs-g-700 hover:border-cs-g-300 transition-colors">
                 Sign In
               </button>
             </Link>
