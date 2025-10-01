@@ -17,7 +17,7 @@ export function Navbar() {
             <img src={logo} alt="ClearScrub" className="h-[54px]" />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation + CTA Buttons */}
           <div className="hidden md:flex items-center gap-8">
             <Link to="/features" className="font-sans text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
               Features
@@ -33,10 +33,6 @@ export function Navbar() {
             >
               API Docs
             </a>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-4">
             <Link to="/login">
               <button className="font-sans font-bold h-12 px-6 text-white rounded-xl border-2 transition-colors" style={{ backgroundColor: '#1800AD', borderColor: '#1800AD' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#1800AD'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#1800AD'; e.currentTarget.style.color = '#ffffff'; }}>
                 Sign In
