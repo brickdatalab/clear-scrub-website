@@ -196,7 +196,7 @@ export type Database = {
       documents: {
         Row: {
           api_key_id: string | null
-          company_id: string
+          company_id: string | null
           created_at: string | null
           error_message: string | null
           file_path: string
@@ -216,7 +216,7 @@ export type Database = {
         }
         Insert: {
           api_key_id?: string | null
-          company_id: string
+          company_id?: string | null
           created_at?: string | null
           error_message?: string | null
           file_path: string
@@ -236,7 +236,7 @@ export type Database = {
         }
         Update: {
           api_key_id?: string | null
-          company_id?: string
+          company_id?: string | null
           created_at?: string | null
           error_message?: string | null
           file_path?: string
@@ -440,7 +440,7 @@ export type Database = {
           anomaly_score: number | null
           average_daily_balance: number | null
           closing_balance: number | null
-          company_id: string
+          company_id: string | null
           created_at: string | null
           data_quality_score: number | null
           document_id: string
@@ -470,7 +470,7 @@ export type Database = {
           anomaly_score?: number | null
           average_daily_balance?: number | null
           closing_balance?: number | null
-          company_id: string
+          company_id?: string | null
           created_at?: string | null
           data_quality_score?: number | null
           document_id: string
@@ -500,7 +500,7 @@ export type Database = {
           anomaly_score?: number | null
           average_daily_balance?: number | null
           closing_balance?: number | null
-          company_id?: string
+          company_id?: string | null
           created_at?: string | null
           data_quality_score?: number | null
           document_id?: string
