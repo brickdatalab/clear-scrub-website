@@ -93,7 +93,7 @@ export default function Homepage() {
             left: 'calc(33.333% - 8rem)',
             width: 'calc(33.333% + 4rem)'
           }}>
-              <line x1="0" y1="1" x2="100%" y2="1" stroke="#006F46" strokeWidth="3" strokeDasharray="8,4">
+              <line x1="0" y1="1" x2="100%" y2="1" stroke="#049F66" strokeWidth="3" strokeDasharray="8,4">
                 <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
               </line>
             </svg>
@@ -103,7 +103,7 @@ export default function Homepage() {
             left: 'calc(66.666% - 8rem)',
             width: 'calc(33.333% + 4rem)'
           }}>
-              <line x1="0" y1="1" x2="100%" y2="1" stroke="#006F46" strokeWidth="3" strokeDasharray="8,4">
+              <line x1="0" y1="1" x2="100%" y2="1" stroke="#049F66" strokeWidth="3" strokeDasharray="8,4">
                 <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
               </line>
             </svg>

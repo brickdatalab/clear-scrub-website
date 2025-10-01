@@ -9,7 +9,7 @@ const CONFIG = {
   opacity: 0.4,
   
   // Your brand green color
-  primaryColor: '#006F46',
+  primaryColor: '#049F66',
   
   // Animation speed (seconds) - higher = slower
   animationSpeed: 3,

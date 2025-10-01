@@ -147,9 +147,9 @@ export function NetworkVisualization({ cards, connections }: NetworkVisualizatio
                 x2="100%"
                 y2="0%"
               >
-                <stop offset="0%" stopColor="#006F46" stopOpacity="0.7" />
+                <stop offset="0%" stopColor="#049F66" stopOpacity="0.7" />
                 <stop offset="50%" stopColor="#00AA6C" stopOpacity="0.7" />
-                <stop offset="100%" stopColor="#006F46" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#049F66" stopOpacity="0.7" />
               </linearGradient>
             </defs>
             <path
