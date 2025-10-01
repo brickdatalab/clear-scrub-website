@@ -8,10 +8,8 @@ import { HeaderFlowConnector } from '../components/HeaderFlowConnector';
 import { TransactionNetwork } from '../components/TransactionNetwork';
 import { DataEnrichmentNetwork } from '../components/DataEnrichmentNetwork';
 import { ApiEcosystemNetwork } from '../components/ApiEcosystemNetwork';
-
 export default function Homepage() {
-  return (
-    <>
+  return <>
       {/* Hero Section */}
       <Section background="gray" className="min-h-[90vh] flex items-center relative overflow-hidden">
         {/* Flow Connector Background */}
@@ -19,19 +17,14 @@ export default function Homepage() {
         
         {/* Subtle geometric pattern background */}
         <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,111,70,0.15) 1px, transparent 0)`,
-          backgroundSize: '20px 20px'
-        }}></div>
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,111,70,0.15) 1px, transparent 0)`,
+        backgroundSize: '20px 20px'
+      }}></div>
         
         <Container className="relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-[48px] md:text-[64px] font-bold leading-tight mb-6">
-              Bank Statement Underwriting in Seconds, Not Hours
-            </h1>
-            <p className="text-subhead text-cs-g-500 mb-8 max-w-2xl mx-auto">
-              Process merchant applications at half the cost with real technology. 
-              Built for MCA underwriters who need speed without compromise.
-            </p>
+            <h1 className="text-[48px] md:text-[64px] font-bold leading-tight mb-6">Reliable Bank Statement Underwriting </h1>
+            <p className="text-subhead text-cs-g-500 mb-8 max-w-2xl mx-auto">Process merchant applications and bank statements at a fraction of the cost with real proprietary technology.</p>
             <div className="flex justify-center">
               <Link to="/pricing">
                 <button className="font-sans px-8 py-4 text-lg font-semibold bg-cs-accent text-white rounded-lg border-2 border-cs-accent hover:bg-transparent hover:text-cs-g-700 hover:border-cs-g-300 transition-colors">
@@ -96,14 +89,20 @@ export default function Homepage() {
             <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-cs-g-300 -z-10" />
             
             {/* Animated connecting line from Upload to Process */}
-            <svg className="hidden md:block absolute top-8 left-0 w-1/3 h-0.5 pointer-events-none opacity-0 transition-opacity duration-500 group-hover/upload:opacity-100" style={{ left: 'calc(33.333% - 8rem)', width: 'calc(33.333% + 4rem)' }}>
+            <svg className="hidden md:block absolute top-8 left-0 w-1/3 h-0.5 pointer-events-none opacity-0 transition-opacity duration-500 group-hover/upload:opacity-100" style={{
+            left: 'calc(33.333% - 8rem)',
+            width: 'calc(33.333% + 4rem)'
+          }}>
               <line x1="0" y1="1" x2="100%" y2="1" stroke="#006F46" strokeWidth="3" strokeDasharray="8,4">
                 <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
               </line>
             </svg>
             
             {/* Animated connecting line from Process to Export */}
-            <svg className="hidden md:block absolute top-8 w-1/3 h-0.5 pointer-events-none opacity-0 transition-opacity duration-500 group-hover/process:opacity-100" style={{ left: 'calc(66.666% - 8rem)', width: 'calc(33.333% + 4rem)' }}>
+            <svg className="hidden md:block absolute top-8 w-1/3 h-0.5 pointer-events-none opacity-0 transition-opacity duration-500 group-hover/process:opacity-100" style={{
+            left: 'calc(66.666% - 8rem)',
+            width: 'calc(33.333% + 4rem)'
+          }}>
               <line x1="0" y1="1" x2="100%" y2="1" stroke="#006F46" strokeWidth="3" strokeDasharray="8,4">
                 <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
               </line>
@@ -243,6 +242,5 @@ export default function Homepage() {
           </div>
         </Container>
       </Section>
-    </>
-  );
+    </>;
 }
