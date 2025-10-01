@@ -239,8 +239,8 @@ export default function Homepage() {
             <p className="text-body text-cs-g-500 mb-8">
               No monthly fees. No hidden costs. Pay only for what you process.
             </p>
-            <Link to="/pricing">
-              <Button variant="primary" size="lg">See Full Pricing</Button>
+            <Link to="/login">
+              <Button variant="primary" size="lg">Get Started</Button>
             </Link>
           </div>
         </Container>
