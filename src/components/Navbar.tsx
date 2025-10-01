@@ -19,17 +19,17 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/features" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md">
+            <Link to="/features" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
               Features
             </Link>
-            <Link to="/pricing" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md">
+            <Link to="/pricing" className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
               Pricing
             </Link>
             <a 
               href="https://docs.clearscrub.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md"
+              className="text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center"
             >
               API Docs
             </a>
@@ -38,7 +38,9 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <Link to="/login">
-              <Button variant="primary" size="sm" className="hover:bg-cs-accent/80 hover:rounded-md transition-all">Sign In</Button>
+              <button className="h-12 px-6 border-2 border-cs-g-300 text-cs-g-700 rounded-lg hover:bg-cs-accent hover:text-white hover:border-cs-accent hover:font-bold transition-all">
+                Sign In
+              </button>
             </Link>
           </div>
 
