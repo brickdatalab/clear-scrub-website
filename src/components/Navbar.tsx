@@ -38,7 +38,7 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
             <Link to="/login">
-              <button className="font-sans font-bold h-12 px-6 text-white rounded-[3px] border-2 transition-colors" style={{ backgroundColor: '#1800AD', borderColor: '#1800AD' }}>
+              <button className="font-sans font-bold h-12 px-6 text-white rounded-xl border-2 transition-colors" style={{ backgroundColor: '#1800AD', borderColor: '#1800AD' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#1800AD'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#1800AD'; e.currentTarget.style.color = '#ffffff'; }}>
                 Sign In
               </button>
             </Link>
