@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from './Button';
 import { Container } from './Container';
+import logo from '@/assets/clear_scrub.svg';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +13,8 @@ export function Navbar() {
       <Container>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold">
-            <span className="text-cs-accent">Clear</span>
-            <span className="text-cs-black">Scrub</span>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="ClearScrub" className="h-8" />
           </Link>
 
           {/* Desktop Navigation */}
