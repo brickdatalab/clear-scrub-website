@@ -94,22 +94,22 @@ export default function Login() {
   return (
     <Section background="white" className="pt-32 pb-20">
       <Container>
-        <div className="max-w-md mx-auto">
-          {/* Header - Fixed Height */}
-          <div className="text-center mb-8 h-24 flex flex-col justify-center">
-            <h1 className="text-display mb-3">
+        <div className="max-w-[450px] mx-auto">
+          {/* Header */}
+          <div className="text-center mb-6">
+            <h1 className="text-2xl font-bold mb-2">
               {isSignUp ? 'Create Your Account' : 'Welcome Back'}
             </h1>
-            <p className="text-body text-cs-g-500">
+            <p className="text-sm text-cs-g-500">
               {isSignUp 
                 ? 'Start processing bank statements in seconds' 
                 : 'Sign in to access your dashboard'}
             </p>
           </div>
 
-          <Card className="shadow-lg">
+          <Card className="shadow-lg p-6">
             {/* Tabs */}
-            <div className="flex gap-1 mb-8 p-1 bg-cs-g-100 rounded-lg">
+            <div className="flex gap-1 mb-6 p-1 bg-cs-g-100 rounded-lg">
               <button
                 onClick={() => {
                   setIsSignUp(false);
@@ -139,21 +139,21 @@ export default function Login() {
             </div>
 
             {error && (
-              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
                 <p className="text-sm text-red-600">{error}</p>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {isSignUp && (
                 <div>
-                  <Label htmlFor="name" className="text-cs-g-700">Full Name</Label>
+                  <Label htmlFor="name" className="text-cs-g-700 text-sm">Full Name</Label>
                   <input
                     id="name"
                     type="text"
                     required={isSignUp}
                     disabled={loading}
-                    className="w-full px-4 py-3 mt-1.5 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                    className="w-full px-3 py-2 mt-1 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -162,13 +162,13 @@ export default function Login() {
               )}
 
               <div>
-                <Label htmlFor="email" className="text-cs-g-700">Email Address</Label>
+                <Label htmlFor="email" className="text-cs-g-700 text-sm">Email Address</Label>
                 <input
                   id="email"
                   type="email"
                   required
                   disabled={loading}
-                  className="w-full px-4 py-3 mt-1.5 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                  className="w-full px-3 py-2 mt-1 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
                   placeholder="you@company.com"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -176,13 +176,13 @@ export default function Login() {
               </div>
 
               <div>
-                <Label htmlFor="password" className="text-cs-g-700">Password</Label>
+                <Label htmlFor="password" className="text-cs-g-700 text-sm">Password</Label>
                 <input
                   id="password"
                   type="password"
                   required
                   disabled={loading}
-                  className="w-full px-4 py-3 mt-1.5 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                  className="w-full px-3 py-2 mt-1 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) => setFormData({...formData, password: e.target.value})}
@@ -191,13 +191,13 @@ export default function Login() {
 
               {isSignUp && (
                 <div>
-                  <Label htmlFor="confirmPassword" className="text-cs-g-700">Confirm Password</Label>
+                  <Label htmlFor="confirmPassword" className="text-cs-g-700 text-sm">Confirm Password</Label>
                   <input
                     id="confirmPassword"
                     type="password"
                     required={isSignUp}
                     disabled={loading}
-                    className="w-full px-4 py-3 mt-1.5 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                    className="w-full px-3 py-2 mt-1 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
                     placeholder="••••••••"
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
@@ -216,8 +216,7 @@ export default function Login() {
               <Button 
                 type="submit" 
                 variant="primary" 
-                size="lg" 
-                className="w-full mt-6"
+                className="w-full mt-4"
                 disabled={loading}
               >
                 {loading ? 'Loading...' : (isSignUp ? 'Create Account' : 'Sign In')}
@@ -225,7 +224,7 @@ export default function Login() {
             </form>
 
             {isSignUp && (
-              <p className="mt-6 text-sm text-center text-cs-g-500">
+              <p className="mt-4 text-xs text-center text-cs-g-500">
                 By signing up, you agree to our{' '}
                 <a href="/terms" className="text-cs-accent hover:underline font-medium">Terms of Service</a>
               </p>
