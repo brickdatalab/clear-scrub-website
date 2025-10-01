@@ -166,7 +166,7 @@ export default function Homepage() {
             {/* Feature 2: Quantum Data™ Append (reversed layout) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1">
-                <h2 className="text-display mb-4">Quantum Data™ Append</h2>
+                <h2 className="text-display mb-4">Quantum Data™</h2>
                 <p className="text-body text-cs-g-500 mb-6">
                   Enrich contact records with verified phone numbers, emails, 
                   and business details. Boost outreach accuracy.
