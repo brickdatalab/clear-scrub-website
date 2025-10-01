@@ -24,7 +24,7 @@ export default {
         'cs-g-300': '#CCCCCC',
         'cs-g-200': '#E0E0E0',
         'cs-g-100': '#F5F5F5',
-        'cs-accent': '#006F46',
+        'cs-accent': '#049F66',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
