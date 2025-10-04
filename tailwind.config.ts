@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       colors: {
-        'cs-black': '#080808',
+        'cs-black': '#000000',
         'cs-white': '#FFFFFF',
         'cs-g-900': '#0D0D0D',
         'cs-g-800': '#1A1A1A',
@@ -24,7 +24,13 @@ export default {
         'cs-g-300': '#CCCCCC',
         'cs-g-200': '#E0E0E0',
         'cs-g-100': '#F5F5F5',
-        'cs-accent': '#049F66',
+        'cs-text-main': '#292929',
+        'cs-text-headline': '#000000',
+        'cs-divider-bg': '#F9FAFB',
+        'cs-primary': '#006F46',
+        'cs-secondary': '#09B878',
+        'cs-intelligence': '#2C14C4',
+        'cs-accent': '#006F46',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

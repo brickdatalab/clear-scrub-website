@@ -1,246 +1,273 @@
 import { Link } from 'react-router-dom';
-import { Zap, DollarSign, Shield, Upload, Cpu, Download } from 'lucide-react';
+import { Zap, Brain, DollarSign, Gauge } from 'lucide-react';
 import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { Card } from '../components/Card';
-import { Button } from '../components/Button';
-import { HeaderFlowConnector } from '../components/HeaderFlowConnector';
-import { TransactionNetwork } from '../components/TransactionNetwork';
-import { DataEnrichmentNetwork } from '../components/DataEnrichmentNetwork';
-import { ApiEcosystemNetwork } from '../components/ApiEcosystemNetwork';
+
 export default function Homepage() {
-  return <>
-      {/* Hero Section */}
-      <Section background="gray" className="min-h-[90vh] flex items-center relative overflow-hidden">
-        {/* Flow Connector Background */}
-        <HeaderFlowConnector />
-        
-        {/* Subtle geometric pattern background */}
-        <div className="absolute inset-0 opacity-30" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,111,70,0.15) 1px, transparent 0)`,
-        backgroundSize: '20px 20px'
-      }}></div>
+  return (
+    <>
+      {/* Hero Section with Stripe Effect */}
+      <Section background="white" className="min-h-[85vh] flex items-center relative overflow-hidden">
+        {/* Animated gradient mesh background */}
+        <div className="absolute inset-0 gradient-mesh pointer-events-none" />
         
         <Container className="relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-[48px] md:text-[64px] font-bold leading-tight mb-6">Reliable Bank Statement Underwriting </h1>
-            <p className="text-subhead text-cs-g-500 mb-8 max-w-2xl mx-auto">Process merchant applications and bank statements at a fraction of the cost with real proprietary technology.</p>
-            <div className="flex justify-center">
-              <Link to="/pricing">
-                <button className="font-sans px-8 py-4 text-lg font-semibold bg-cs-accent text-white rounded-lg border-2 border-cs-accent hover:bg-transparent hover:text-cs-g-700 hover:border-cs-g-300 transition-colors">
-                  View Pricing
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left: Content (60%) */}
+            <div className="lg:col-span-7 fade-in-up">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-cs-text-headline">
+                AI-Powered Infrastructure for Financial Data.
+              </h1>
+              <p className="text-xl text-cs-text-main mb-8 leading-relaxed max-w-2xl">
+                ClearScrub delivers "Fast Intelligence": the processing speed of legacy converters 
+                combined with the insights of modern AI enrichment. Process bank statements in seconds, 
+                categorize transactions, and access business intelligence through our radically simple 
+                API platform.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/login">
+                  <button className="font-sans font-semibold px-8 py-4 text-lg text-white bg-cs-primary rounded-md hover:bg-cs-primary/90 transition-all duration-300 shadow-md hover:shadow-lg">
+                    Start Now →
+                  </button>
+                </Link>
+                <a 
+                  href="https://docs.clearscrub.io" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-sans font-semibold px-8 py-4 text-lg text-cs-intelligence hover:text-cs-intelligence/80 transition-colors flex items-center justify-center"
+                >
+                  Explore the Docs →
+                </a>
+              </div>
+            </div>
+            
+            {/* Right: Visualization (40%) */}
+            <div className="lg:col-span-5 fade-in-up">
+              <div className="relative">
+                {/* Technical visualization */}
+                <div className="bg-gradient-to-br from-cs-intelligence/10 to-cs-intelligence/5 rounded-lg p-8 border border-cs-intelligence/20 shadow-xl backdrop-blur-sm">
+                  <div className="space-y-4">
+                    {/* API Response Mockup */}
+                    <div className="font-mono text-sm">
+                      <div className="text-cs-intelligence/70">// API Response</div>
+                      <div className="mt-2 space-y-1">
+                        <div><span className="text-cs-intelligence">status</span>: <span className="text-cs-secondary">"processed"</span>,</div>
+                        <div><span className="text-cs-intelligence">processing_time</span>: <span className="text-cs-secondary">"2.4s"</span>,</div>
+                        <div><span className="text-cs-intelligence">transactions</span>: <span className="text-cs-secondary">247</span>,</div>
+                        <div><span className="text-cs-intelligence">intelligence_score</span>: <span className="text-cs-secondary">98.6</span></div>
+                      </div>
+                    </div>
+                    
+                    {/* Data Flow Visualization */}
+                    <div className="flex items-center gap-3 pt-4">
+                      <div className="h-2 w-2 rounded-full bg-cs-secondary animate-pulse" />
+                      <div className="h-0.5 flex-1 bg-gradient-to-r from-cs-secondary to-cs-intelligence" />
+                      <div className="h-2 w-2 rounded-full bg-cs-intelligence animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Section: The Problem with Status Quo */}
+      <Section background="white">
+        <Container>
+          <div className="max-w-4xl mx-auto text-center fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cs-text-headline">
+              The Evolution of Data Extraction.
+            </h2>
+            <p className="text-lg text-cs-text-main leading-relaxed">
+              The financial services industry has long relied on established infrastructure for PDF conversion. 
+              While some providers optimized for speed, they lacked intelligent analysis. Others attempted to 
+              add intelligence by simply rebranding that same legacy infrastructure, adding complex workflows, 
+              and charging a significant premium—acting as expensive middlemen.
+            </p>
+            <p className="text-lg text-cs-text-main leading-relaxed mt-6 font-semibold">
+              ClearScrub breaks this mold. We built a modern, AI-native platform that delivers both 
+              lightning-fast processing and deep financial intelligence, without the markup.
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Section: Fast Intelligence Platform */}
+      <Section background="gray" className="bg-cs-divider-bg">
+        <Container>
+          <div className="text-center mb-16 fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cs-text-headline">
+              Fast Intelligence. Radically Simple Adoption.
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-up">
+            {/* Column 1: Speed */}
+            <Card hover className="text-center">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-cs-primary/10 rounded-full flex items-center justify-center">
+                  <Gauge className="text-cs-primary" size={32} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold mb-4 text-cs-text-headline">
+                Optimized for Speed
+              </h3>
+              <p className="text-cs-text-main leading-relaxed">
+                Our streamlined infrastructure processes statements in under 5 seconds, enabling 
+                real-time underwriting. We match the speed of the fastest legacy systems while 
+                eliminating the 1-4 minute delays common in workflow-heavy platforms.
+              </p>
+            </Card>
+            
+            {/* Column 2: AI */}
+            <Card hover className="text-center">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-cs-primary/10 rounded-full flex items-center justify-center">
+                  <Brain className="text-cs-primary" size={32} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold mb-4 text-cs-text-headline">
+                Beyond Raw Data
+              </h3>
+              <p className="text-cs-text-main leading-relaxed">
+                We don't just extract data; we enrich it. Our AI engine provides intelligent 
+                categorization and merchant enrichment (logos, URLs, industry benchmarks) without 
+                requiring a live banking connection.
+              </p>
+            </Card>
+            
+            {/* Column 3: Pricing */}
+            <Card hover className="text-center">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-cs-primary/10 rounded-full flex items-center justify-center">
+                  <DollarSign className="text-cs-primary" size={32} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold mb-4 text-cs-text-headline">
+                Usage-Based and Affordable
+              </h3>
+              <p className="text-cs-text-main leading-relaxed">
+                A transparent, pay-as-you-go model that is significantly more affordable than 
+                competitors. No setup fees, no minimums, and no annual contracts.
+              </p>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Section: Hybrid AI and Transparency */}
+      <Section background="white">
+        <Container>
+          <div className="text-center mb-16 fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cs-text-headline">
+              Transparent AI: The Hybrid Intelligence Model.
+            </h2>
+            <p className="text-xl text-cs-text-main max-w-3xl mx-auto">
+              Black-box algorithms erode trust. Our Hybrid AI architecture provides unparalleled 
+              transparency and accuracy.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start fade-in-up">
+            {/* Feature 1: Confidence Scoring */}
+            <div>
+              <h3 className="text-3xl font-semibold mb-6 text-cs-text-headline">
+                Granular Confidence Metrics
+              </h3>
+              <p className="text-lg text-cs-text-main mb-8 leading-relaxed">
+                Utilizing sophisticated probabilistic models, ClearScrub assigns a precise confidence 
+                score (0-100%) to every single extracted field. This provides full transparency into 
+                the AI's decision-making process, allowing you to automate based on your risk tolerance.
+              </p>
+              
+              {/* JSON Visualization */}
+              <div className="bg-gradient-to-br from-cs-intelligence/5 to-cs-intelligence/10 rounded-lg p-6 border border-cs-intelligence/20 font-mono text-sm">
+                <div className="space-y-2">
+                  <div className="text-cs-intelligence/70">{'{'}</div>
+                  <div className="ml-4">
+                    <span className="text-cs-intelligence">"merchant"</span>: 
+                    <span className="text-cs-text-main"> "Starbucks"</span>,
+                  </div>
+                  <div className="ml-4">
+                    <span className="text-cs-intelligence">"amount"</span>: 
+                    <span className="text-cs-text-main"> 4.50</span>,
+                  </div>
+                  <div className="ml-4">
+                    <span className="text-cs-intelligence">"confidence_score"</span>: 
+                    <span className="text-cs-secondary font-semibold"> 99.8</span>
+                  </div>
+                  <div className="text-cs-intelligence/70">{'}'}</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Feature 2: Human Verification */}
+            <div>
+              <h3 className="text-3xl font-semibold mb-6 text-cs-text-headline">
+                Dynamic Review Queues (HITL)
+              </h3>
+              <p className="text-lg text-cs-text-main mb-8 leading-relaxed">
+                Configure thresholds to automatically route low-confidence results to a human review 
+                queue. You can manage the review internally via our dashboard, or leverage our secure, 
+                crowdsourced review platform for guaranteed accuracy.
+              </p>
+              
+              {/* Visual representation */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 bg-cs-divider-bg rounded-lg border border-cs-g-200">
+                  <div className="h-3 w-3 rounded-full bg-cs-secondary" />
+                  <div className="flex-1">
+                    <div className="text-sm font-semibold text-cs-text-headline">High Confidence (≥95%)</div>
+                    <div className="text-sm text-cs-text-main">Auto-approved</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-cs-divider-bg rounded-lg border border-cs-g-200">
+                  <div className="h-3 w-3 rounded-full bg-yellow-500" />
+                  <div className="flex-1">
+                    <div className="text-sm font-semibold text-cs-text-headline">Medium Confidence (80-95%)</div>
+                    <div className="text-sm text-cs-text-main">Flagged for review</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-cs-divider-bg rounded-lg border border-cs-g-200">
+                  <div className="h-3 w-3 rounded-full bg-red-500" />
+                  <div className="flex-1">
+                    <div className="text-sm font-semibold text-cs-text-headline">Low Confidence (&lt;80%)</div>
+                    <div className="text-sm text-cs-text-main">Required human verification</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Final CTA */}
+      <Section background="white" className="border-t border-cs-g-200">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cs-text-headline">
+              Ready to implement Fast Intelligence?
+            </h2>
+            <p className="text-xl text-cs-text-main mb-8">
+              Experience radically better technology with transparent, usage-based pricing.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/login">
+                <button className="font-sans font-semibold px-8 py-4 text-lg text-white bg-cs-primary rounded-md hover:bg-cs-primary/90 transition-all duration-300 shadow-md hover:shadow-lg">
+                  Get Started Free →
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="font-sans font-semibold px-8 py-4 text-lg text-cs-text-main border-2 border-cs-g-300 rounded-md hover:border-cs-primary hover:text-cs-primary transition-all duration-300">
+                  Contact Sales →
                 </button>
               </Link>
             </div>
           </div>
         </Container>
       </Section>
-
-      {/* Value Props Section */}
-      <Section background="white">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1: Lightning Fast Processing */}
-            <Card hover className="text-center">
-              <div className="flex justify-center mb-4">
-                <Zap className="text-cs-accent" size={32} />
-              </div>
-              <h3 className="text-heading mb-3">Lightning Fast Processing</h3>
-              <p className="text-body text-cs-g-500">
-                Parse and normalize bank statements in under 30 seconds. No queues, no delays.
-              </p>
-            </Card>
-            
-            {/* Card 2: Half the Price */}
-            <Card hover className="text-center">
-              <div className="flex justify-center mb-4">
-                <DollarSign className="text-cs-accent" size={32} />
-              </div>
-              <h3 className="text-heading mb-3">Half the Price, Same Accuracy</h3>
-              <p className="text-body text-cs-g-500">
-                50% cheaper than MoneyThumb. Pay only for what you process.
-              </p>
-            </Card>
-            
-            {/* Card 3: Real Technology */}
-            <Card hover className="text-center">
-              <div className="flex justify-center mb-4">
-                <Shield className="text-cs-accent" size={32} />
-              </div>
-              <h3 className="text-heading mb-3">Real Technology, No Middlemen</h3>
-              <p className="text-body text-cs-g-500">
-                Our own parsing engine. Your data never leaves our infrastructure.
-              </p>
-            </Card>
-          </div>
-        </Container>
-      </Section>
-
-      {/* How It Works Section */}
-      <Section background="gray">
-        <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-[48px] md:text-[64px] font-bold leading-tight mb-4">How It Works</h2>
-            <p className="text-subhead text-cs-g-500">Three steps to cleaner data</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-            {/* Base connecting line - always visible */}
-            <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-cs-g-300 -z-10" />
-            
-            {/* Animated connecting line from Upload to Process */}
-            <svg className="hidden md:block absolute top-8 left-0 w-1/3 h-0.5 pointer-events-none opacity-0 transition-opacity duration-500 group-hover/upload:opacity-100" style={{
-            left: 'calc(33.333% - 8rem)',
-            width: 'calc(33.333% + 4rem)'
-          }}>
-              <line x1="0" y1="1" x2="100%" y2="1" stroke="#049F66" strokeWidth="3" strokeDasharray="8,4">
-                <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
-              </line>
-            </svg>
-            
-            {/* Animated connecting line from Process to Export */}
-            <svg className="hidden md:block absolute top-8 w-1/3 h-0.5 pointer-events-none opacity-0 transition-opacity duration-500 group-hover/process:opacity-100" style={{
-            left: 'calc(66.666% - 8rem)',
-            width: 'calc(33.333% + 4rem)'
-          }}>
-              <line x1="0" y1="1" x2="100%" y2="1" stroke="#049F66" strokeWidth="3" strokeDasharray="8,4">
-                <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite" />
-              </line>
-            </svg>
-            
-            {/* Step 1: Upload */}
-            <div className="text-center relative group/upload cursor-pointer">
-              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover/upload:scale-110 group-hover/upload:shadow-lg group-hover/upload:shadow-cs-accent/50">
-                <Upload className="text-white transition-transform duration-300 group-hover/upload:scale-110" size={28} />
-              </div>
-              <h3 className="text-heading mb-2">Upload</h3>
-              <p className="text-body text-cs-g-500">
-                Drop bank statements or connect via API
-              </p>
-            </div>
-            
-            {/* Step 2: Process */}
-            <div className="text-center relative group/process cursor-pointer">
-              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover/process:scale-110 group-hover/process:shadow-lg group-hover/process:shadow-cs-accent/50">
-                <Cpu className="text-white transition-transform duration-300 group-hover/process:rotate-90" size={28} />
-              </div>
-              <h3 className="text-heading mb-2">Process</h3>
-              <p className="text-body text-cs-g-500">
-                AI normalizes transactions in real-time
-              </p>
-            </div>
-            
-            {/* Step 3: Export */}
-            <div className="text-center relative group/export cursor-pointer">
-              <div className="w-16 h-16 bg-cs-accent rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover/export:scale-110 group-hover/export:shadow-lg group-hover/export:shadow-cs-accent/50">
-                <Download className="text-white transition-transform duration-300 group-hover/export:translate-y-1" size={28} />
-              </div>
-              <h3 className="text-heading mb-2">Export</h3>
-              <p className="text-body text-cs-g-500">
-                Push to your CRM or download clean data
-              </p>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Features Preview Section */}
-      <Section background="white">
-        <Container>
-          <div className="space-y-24">
-            {/* Feature 1: Transaction Normalization */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <TransactionNetwork />
-              <div>
-                <h2 className="text-display mb-4">Transaction Normalization</h2>
-                <p className="text-body text-cs-g-500 mb-6">
-                  Automatically categorize and standardize merchant names, amounts, 
-                  and dates. Export to any CRM format.
-                </p>
-                <Link to="/features">
-                  <Button variant="outline">Learn More</Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Feature 2: Quantum Data™ Append (reversed layout) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1">
-                <h2 className="text-display mb-4">Quantum Data™</h2>
-                <p className="text-body text-cs-g-500 mb-6">
-                  Enrich contact records with verified phone numbers, emails, 
-                  and business details. Boost outreach accuracy.
-                </p>
-                <Link to="/features">
-                  <Button variant="outline">Learn More</Button>
-                </Link>
-              </div>
-              <div className="order-1 md:order-2">
-                <DataEnrichmentNetwork />
-              </div>
-            </div>
-
-            {/* Feature 3: API Integration */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <ApiEcosystemNetwork />
-              <div>
-                <h2 className="text-display mb-4">API-First Architecture</h2>
-                <p className="text-body text-cs-g-500 mb-6">
-                  Integrate directly into your workflow. REST API, webhooks, 
-                  and batch processing included.
-                </p>
-                <Link to="/features">
-                  <Button variant="outline">Learn More</Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Positioning Section */}
-      <Section background="gray">
-        <Container>
-          <h2 className="text-[48px] md:text-[64px] font-bold leading-tight text-center mb-16">Built Different</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <Card>
-              <h3 className="text-heading mb-4 text-cs-g-500">What others do</h3>
-              <ul className="space-y-3 text-body text-cs-g-500">
-                <li>• Outsource to legacy systems</li>
-                <li>• Charge premium rates</li>
-                <li>• Create data silos</li>
-                <li>• Manual processing delays</li>
-              </ul>
-            </Card>
-            
-            <Card>
-              <h3 className="text-heading mb-4 text-cs-accent">What we do</h3>
-              <ul className="space-y-3 text-body text-cs-black">
-                <li>• Native processing engine</li>
-                <li>• Transparent pricing</li>
-                <li>• Seamless CRM integration</li>
-                <li>• Real-time automation</li>
-              </ul>
-            </Card>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Pricing Preview Section */}
-      <Section background="dark">
-        <Container>
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-display mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-[40px] font-bold text-cs-accent mb-4">$0.50 per PDF</p>
-            <p className="text-body text-cs-g-400 mb-8">
-              No monthly fees. No hidden costs. Pay only for what you process.
-            </p>
-            <Link to="/login">
-              <Button variant="primary" size="lg">Create Account</Button>
-            </Link>
-          </div>
-        </Container>
-      </Section>
-    </>;
+    </>
+  );
 }

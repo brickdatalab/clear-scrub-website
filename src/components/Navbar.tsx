@@ -19,23 +19,32 @@ export function Navbar() {
 
           {/* Desktop Navigation + CTA Buttons */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/features" className="font-sans text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
-              Features
+            <Link to="/features" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+              Products
             </Link>
-            <Link to="/pricing" className="font-sans text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center">
-              Pricing
+            <Link to="/features" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+              Solutions
             </Link>
             <a 
               href="https://docs.clearscrub.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="font-sans text-cs-g-700 hover:text-white hover:bg-cs-accent hover:font-bold transition-all px-4 py-2 rounded-md h-12 flex items-center"
+              className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors"
             >
-              API Docs
+              Developers
             </a>
+            <Link to="/pricing" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+              Pricing
+            </Link>
+            <Link to="/contact" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+              Company
+            </Link>
+            <Link to="/login" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+              Sign In →
+            </Link>
             <Link to="/login">
-              <button className="font-sans font-bold h-12 px-6 text-white rounded-xl border-2 transition-colors" style={{ backgroundColor: '#1800AD', borderColor: '#1800AD' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#1800AD'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#1800AD'; e.currentTarget.style.color = '#ffffff'; }}>
-                Sign In
+              <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:bg-cs-primary/90 transition-all duration-300">
+                Get Started Free
               </button>
             </Link>
           </div>
