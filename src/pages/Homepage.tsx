@@ -34,12 +34,14 @@ export const Homepage = () => {
                 ClearScrub delivers "Fast Intelligence": the processing speed of legacy converters combined with the insights of modern AI enrichment. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-6 text-lg smooth-hover btn-hover">
-                  Start Now <ArrowRight className="ml-2" />
-                </Button>
-                <Button variant="outline" className="text-cs-intelligence hover:text-cs-intelligence/90 px-8 py-6 text-lg smooth-hover link-hover border-cs-intelligence">
-                  Explore the Docs <ArrowRight className="ml-2" />
-                </Button>
+                <button className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
+                  Start Now
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+                <button className="flex items-center justify-center gap-2 bg-white border-2 border-cs-intelligence text-cs-intelligence hover:bg-cs-intelligence/5 px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
+                  Explore the Docs
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
 
