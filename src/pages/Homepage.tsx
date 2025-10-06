@@ -2,7 +2,6 @@ import { Button } from "@/components/Button";
 import { ArrowRight, Zap, Brain, DollarSign, Shield, Globe, Lock, Code, Sparkles } from "lucide-react";
 import { InteractiveCodeBlock } from "@/components/InteractiveCodeBlock";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
 export const Homepage = () => {
   const heroAnimation = useScrollAnimation();
   const problemAnimation = useScrollAnimation();
@@ -12,24 +11,17 @@ export const Homepage = () => {
   const platformAnimation = useScrollAnimation();
   const complianceAnimation = useScrollAnimation();
   const ctaAnimation = useScrollAnimation();
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-cs-white overflow-hidden py-24">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 gradient-mesh" />
         
         <div className="container mx-auto px-6 relative z-10">
-          <div 
-            ref={heroAnimation.ref}
-            className={`grid lg:grid-cols-2 gap-12 items-center scroll-fade-in ${heroAnimation.isVisible ? 'visible' : ''}`}
-          >
+          <div ref={heroAnimation.ref} className={`grid lg:grid-cols-2 gap-12 items-center scroll-fade-in ${heroAnimation.isVisible ? 'visible' : ''}`}>
             {/* Left Side - Text & CTAs */}
             <div className="space-y-8">
-              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">
-                AI-Powered Infrastructure for Financial Data.
-              </h1>
+              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">AI-Powered Infrastructure for Banking Data.</h1>
               <p className="text-xl text-cs-text-main leading-relaxed">
                 ClearScrub delivers "Fast Intelligence": the processing speed of legacy converters combined with the insights of modern AI enrichment. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform.
               </p>
@@ -52,10 +44,18 @@ export const Homepage = () => {
                   <div className="font-mono text-sm">
                     <div className="text-cs-intelligence/70">// API Response</div>
                     <div className="mt-2 space-y-1">
-                      <div><span style={{ color: '#2C14C4' }}>status</span>: <span className="text-cs-secondary">"processed"</span>,</div>
-                      <div><span style={{ color: '#2C14C4' }}>processing_time</span>: <span className="text-cs-secondary">"2.4s"</span>,</div>
-                      <div><span style={{ color: '#2C14C4' }}>transactions</span>: <span className="text-cs-secondary">247</span>,</div>
-                      <div><span style={{ color: '#2C14C4' }}>intelligence_score</span>: <span className="text-cs-secondary">98.6</span></div>
+                      <div><span style={{
+                        color: '#2C14C4'
+                      }}>status</span>: <span className="text-cs-secondary">"processed"</span>,</div>
+                      <div><span style={{
+                        color: '#2C14C4'
+                      }}>processing_time</span>: <span className="text-cs-secondary">"2.4s"</span>,</div>
+                      <div><span style={{
+                        color: '#2C14C4'
+                      }}>transactions</span>: <span className="text-cs-secondary">247</span>,</div>
+                      <div><span style={{
+                        color: '#2C14C4'
+                      }}>intelligence_score</span>: <span className="text-cs-secondary">98.6</span></div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 pt-4">
@@ -73,13 +73,8 @@ export const Homepage = () => {
       {/* Section: The Problem with Status Quo */}
       <section className="py-20 bg-cs-white">
         <div className="container mx-auto px-6">
-          <div 
-            ref={problemAnimation.ref}
-            className={`max-w-4xl mx-auto text-center space-y-6 scroll-fade-in ${problemAnimation.isVisible ? 'visible' : ''}`}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
-              The Evolution of Data Extraction.
-            </h2>
+          <div ref={problemAnimation.ref} className={`max-w-4xl mx-auto text-center space-y-6 scroll-fade-in ${problemAnimation.isVisible ? 'visible' : ''}`}>
+            <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">The Evolution of Banking Data Extraction</h2>
             <p className="text-lg text-cs-text-main leading-relaxed">
               The financial services industry has long relied on established infrastructure for PDF conversion. While some providers optimized for speed, they lacked intelligent analysis. <strong>Others attempted to add intelligence by simply rebranding that same legacy infrastructure, adding complex workflows, and charging a significant premium—acting as expensive middlemen.</strong>
             </p>
@@ -93,16 +88,13 @@ export const Homepage = () => {
       {/* Section: Fast Intelligence Platform */}
       <section className="py-20 bg-cs-divider-bg">
         <div className="container mx-auto px-6">
-          <div 
-            ref={fastIntelAnimation.ref}
-            className={`text-center mb-16 scroll-fade-in ${fastIntelAnimation.isVisible ? 'visible' : ''}`}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
-              Fast Intelligence. Radically Simple Adoption.
-            </h2>
+          <div ref={fastIntelAnimation.ref} className={`text-center mb-16 scroll-fade-in ${fastIntelAnimation.isVisible ? 'visible' : ''}`}>
+            <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">Fast Intelligence. Radically Simple Adoption.</h2>
           </div>
           
-          <div className={`grid md:grid-cols-3 gap-8 scroll-fade-in ${fastIntelAnimation.isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          <div className={`grid md:grid-cols-3 gap-8 scroll-fade-in ${fastIntelAnimation.isVisible ? 'visible' : ''}`} style={{
+          transitionDelay: '0.1s'
+        }}>
             {/* Column 1 */}
             <div className="bg-cs-white p-8 rounded-lg space-y-4 card-shadow smooth-hover">
               <div className="w-14 h-14 rounded-lg bg-cs-primary/10 flex items-center justify-center">
@@ -142,10 +134,7 @@ export const Homepage = () => {
       {/* Section: Hybrid AI and Transparency */}
       <section className="py-20 bg-cs-white">
         <div className="container mx-auto px-6">
-          <div 
-            ref={hybridAiAnimation.ref}
-            className={`text-center mb-16 scroll-fade-in ${hybridAiAnimation.isVisible ? 'visible' : ''}`}
-          >
+          <div ref={hybridAiAnimation.ref} className={`text-center mb-16 scroll-fade-in ${hybridAiAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
               Transparent AI: The Hybrid Intelligence Model.
             </h2>
@@ -154,7 +143,9 @@ export const Homepage = () => {
             </p>
           </div>
           
-          <div className={`grid md:grid-cols-2 gap-12 items-start scroll-fade-in ${hybridAiAnimation.isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          <div className={`grid md:grid-cols-2 gap-12 items-start scroll-fade-in ${hybridAiAnimation.isVisible ? 'visible' : ''}`} style={{
+          transitionDelay: '0.1s'
+        }}>
             {/* Feature 1: Confidence Scoring */}
             <div className="space-y-6">
               <h3 className="text-3xl font-semibold text-cs-text-headline">Granular Confidence Metrics</h3>
@@ -167,9 +158,15 @@ export const Homepage = () => {
                 <pre className="text-cs-white">
                   <code>
                     {`{
-  `}<span style={{ color: '#2C14C4' }}>"merchant"</span>{`: "Starbucks",
-  `}<span style={{ color: '#2C14C4' }}>"amount"</span>{`: 4.50,
-  `}<span style={{ color: '#2C14C4' }}>"confidence_score"</span>{`: 99.8
+  `}<span style={{
+                    color: '#2C14C4'
+                  }}>"merchant"</span>{`: "Starbucks",
+  `}<span style={{
+                    color: '#2C14C4'
+                  }}>"amount"</span>{`: 4.50,
+  `}<span style={{
+                    color: '#2C14C4'
+                  }}>"confidence_score"</span>{`: 99.8
 }`}
                   </code>
                 </pre>
@@ -211,12 +208,11 @@ export const Homepage = () => {
       </section>
 
       {/* Section: Developer Experience (DX) */}
-      <section className="py-20" style={{ backgroundColor: '#2C14C4' }}>
+      <section className="py-20" style={{
+      backgroundColor: '#2C14C4'
+    }}>
         <div className="container mx-auto px-6">
-          <div 
-            ref={dxAnimation.ref}
-            className={`text-center mb-12 scroll-fade-in ${dxAnimation.isVisible ? 'visible' : ''}`}
-          >
+          <div ref={dxAnimation.ref} className={`text-center mb-12 scroll-fade-in ${dxAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-white">
               A Radically Better Developer Experience.
             </h2>
@@ -225,7 +221,9 @@ export const Homepage = () => {
             </p>
           </div>
           
-          <div className={`grid lg:grid-cols-5 gap-12 items-start scroll-fade-in ${dxAnimation.isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          <div className={`grid lg:grid-cols-5 gap-12 items-start scroll-fade-in ${dxAnimation.isVisible ? 'visible' : ''}`} style={{
+          transitionDelay: '0.1s'
+        }}>
             {/* Left Side - Feature Descriptions */}
             <div className="lg:col-span-2 space-y-8">
               <div className="space-y-4">
@@ -270,20 +268,21 @@ export const Homepage = () => {
       {/* Section: Platform Extensions */}
       <section className="py-20 bg-cs-divider-bg">
         <div className="container mx-auto px-6">
-          <div 
-            ref={platformAnimation.ref}
-            className={`text-center mb-16 scroll-fade-in ${platformAnimation.isVisible ? 'visible' : ''}`}
-          >
+          <div ref={platformAnimation.ref} className={`text-center mb-16 scroll-fade-in ${platformAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
               A Complete Toolkit for Modern Finance.
             </h2>
           </div>
           
-          <div className={`space-y-20 scroll-fade-in ${platformAnimation.isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          <div className={`space-y-20 scroll-fade-in ${platformAnimation.isVisible ? 'visible' : ''}`} style={{
+          transitionDelay: '0.1s'
+        }}>
             {/* Feature Block 1 */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h3 className="text-3xl font-semibold" style={{ color: '#006F46' }}>White-Label & Embeddable UI</h3>
+                <h3 className="text-3xl font-semibold" style={{
+                color: '#006F46'
+              }}>White-Label & Embeddable UI</h3>
                 <p className="text-lg text-cs-text-main leading-relaxed">
                   Accelerate your time-to-market. Most lenders want branded experiences but hate building custom UIs. We provide pre-built, drop-in React/Vue components for upload and results display. Launch a mobile-first experience with just one line of code.
                 </p>
@@ -303,7 +302,9 @@ export const Homepage = () => {
                 </div>
               </div>
               <div className="space-y-6 order-1 md:order-2">
-                <h3 className="text-3xl font-semibold" style={{ color: '#2C14C4' }}>Seamless Connectivity</h3>
+                <h3 className="text-3xl font-semibold" style={{
+                color: '#2C14C4'
+              }}>Seamless Connectivity</h3>
                 <p className="text-lg text-cs-text-main leading-relaxed">
                   Connect ClearScrub to your existing workflows. We offer pre-built connectors to the top 20 lending CRMs (Salesforce, HubSpot, Blend, Encompass), no-code automation via Zapier/Make.com, and flexible webhook templates.
                 </p>
@@ -316,10 +317,7 @@ export const Homepage = () => {
       {/* Section: Compliance and Security */}
       <section className="py-20 bg-cs-white">
         <div className="container mx-auto px-6">
-          <div 
-            ref={complianceAnimation.ref}
-            className={`text-center mb-16 scroll-fade-in ${complianceAnimation.isVisible ? 'visible' : ''}`}
-          >
+          <div ref={complianceAnimation.ref} className={`text-center mb-16 scroll-fade-in ${complianceAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
               Compliance-First Architecture.
             </h2>
@@ -328,7 +326,9 @@ export const Homepage = () => {
             </p>
           </div>
           
-          <div className={`grid md:grid-cols-3 gap-8 scroll-fade-in ${complianceAnimation.isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          <div className={`grid md:grid-cols-3 gap-8 scroll-fade-in ${complianceAnimation.isVisible ? 'visible' : ''}`} style={{
+          transitionDelay: '0.1s'
+        }}>
             <div className="p-8 bg-cs-divider-bg rounded-lg space-y-4 card-shadow smooth-hover">
               <div className="w-14 h-14 rounded-lg bg-cs-primary/10 flex items-center justify-center">
                 <Shield className="w-7 h-7 text-cs-primary" />
@@ -359,10 +359,7 @@ export const Homepage = () => {
       {/* Final CTA */}
       <section className="py-20 bg-cs-white">
         <div className="container mx-auto px-6">
-          <div 
-            ref={ctaAnimation.ref}
-            className={`text-center space-y-8 max-w-3xl mx-auto scroll-fade-in ${ctaAnimation.isVisible ? 'visible' : ''}`}
-          >
+          <div ref={ctaAnimation.ref} className={`text-center space-y-8 max-w-3xl mx-auto scroll-fade-in ${ctaAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
               Ready to implement Fast Intelligence?
             </h2>
@@ -380,8 +377,6 @@ export const Homepage = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Homepage;
