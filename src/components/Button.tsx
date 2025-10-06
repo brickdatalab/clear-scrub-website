@@ -12,7 +12,7 @@ export function Button({
   children, 
   ...props 
 }: ButtonProps) {
-  const baseStyles = 'rounded-xl font-semibold transition-opacity hover:opacity-90 disabled:opacity-50';
+  const baseStyles = 'flex items-center justify-center gap-2 rounded-xl font-semibold transition-opacity hover:opacity-90 disabled:opacity-50';
   
   const variants = {
     primary: 'bg-cs-accent text-white',
