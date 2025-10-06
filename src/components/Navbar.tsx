@@ -36,9 +36,6 @@ export function Navbar() {
             <Link to="/pricing" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
               Pricing
             </Link>
-            <Link to="/company" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
-              Company
-            </Link>
             <Link to="/login">
               <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:bg-cs-primary/90 smooth-hover btn-hover">
                 Sign In
