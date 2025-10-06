@@ -20,140 +20,143 @@ export default function Pricing() {
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Developer (Free Tier) */}
-            <Card className="p-8 border-2 border-cs-g-200">
-              <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Developer</h2>
-              <div className="mb-4">
-                <span className="text-5xl font-bold text-cs-text-headline">Free</span>
-              </div>
-              <p className="text-cs-text-main mb-8">
-                Everything you need to build and test
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">First 500 statements/month</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Full API access</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Sandbox environment</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Community support</span>
-                </li>
-              </ul>
-            </Card>
+            <Link to="/contact" className="block">
+              <Card className="p-8 border-2 border-cs-g-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer h-full">
+                <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Developer</h2>
+                <div className="mb-4">
+                  <span className="text-5xl font-bold text-cs-text-headline">Free</span>
+                </div>
+                <p className="text-cs-text-main mb-8">
+                  Everything you need to build and test
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">First 500 statements/month</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Full API access</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Sandbox environment</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Community support</span>
+                  </li>
+                </ul>
+              </Card>
+            </Link>
 
             {/* Pay-As-You-Go */}
-            <Card className="p-8 bg-[#E8F5E9] border-0">
-              <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Pay-As-You-Go</h2>
-              <div className="mb-4">
-                <span className="text-5xl font-bold text-cs-text-headline">$0.50</span>
-                <span className="text-xl text-cs-text-main">/credit</span>
-              </div>
-              <p className="text-cs-text-main mb-8">
-                Base plan with flexible usage
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">$0.50 per credit</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">$25 minimum purchase</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">API access</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Email support</span>
-                </li>
-              </ul>
-            </Card>
+            <Link to="/contact" className="block">
+              <Card className="p-8 bg-[#E8F5E9] border-0 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer h-full">
+                <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Pay-As-You-Go</h2>
+                <div className="mb-4">
+                  <span className="text-5xl font-bold text-cs-text-headline">$0.50</span>
+                  <span className="text-xl text-cs-text-main">/credit</span>
+                </div>
+                <p className="text-cs-text-main mb-8">
+                  Base plan with flexible usage
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">$0.50 per credit</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">$25 minimum purchase</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">API access</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Email support</span>
+                  </li>
+                </ul>
+              </Card>
+            </Link>
 
             {/* Pro Plan */}
-            <Card className="p-8 border-2 border-cs-text-headline relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="bg-[#006F46] text-white px-4 py-1 rounded-full text-sm font-semibold">
-                  Recommended
-                </span>
-              </div>
-              <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Pro Plan</h2>
-              <div className="mb-4">
-                <span className="text-5xl font-bold text-cs-text-headline">$299</span>
-                <span className="text-xl text-cs-text-main">/month</span>
-              </div>
-              <p className="text-cs-text-main mb-8">
-                20% off Pay-as-you-go
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">750 credits included</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">$0.40 per overage credit</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Full API access</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Priority support</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Webhooks</span>
-                </li>
-              </ul>
-            </Card>
+            <Link to="/contact" className="block">
+              <Card className="p-8 border-2 border-cs-g-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer h-full">
+                <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Pro Plan</h2>
+                <div className="mb-4">
+                  <span className="text-5xl font-bold text-cs-text-headline">$299</span>
+                  <span className="text-xl text-cs-text-main">/month</span>
+                </div>
+                <p className="text-cs-text-main mb-8">
+                  20% off Pay-as-you-go
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">750 credits included</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">$0.40 per overage credit</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Full API access</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Priority support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Webhooks</span>
+                  </li>
+                </ul>
+              </Card>
+            </Link>
 
             {/* Elite Plan */}
-            <Card className="p-8 border-2 border-cs-g-200">
-              <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Elite Plan</h2>
-              <div className="mb-4">
-                <span className="text-5xl font-bold text-cs-text-headline">$999</span>
-                <span className="text-xl text-cs-text-main">/month</span>
-              </div>
-              <p className="text-cs-text-main mb-8">
-                30% off Pay-as-you-go
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">2,855 credits included</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">$0.35 per overage credit</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Full API access</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Dedicated support</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Custom integrations</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">SLA guarantee</span>
-                </li>
-              </ul>
-            </Card>
+            <Link to="/contact" className="block">
+              <Card className="p-8 border-2 border-cs-g-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer h-full">
+                <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Elite Plan</h2>
+                <div className="mb-4">
+                  <span className="text-5xl font-bold text-cs-text-headline">$999</span>
+                  <span className="text-xl text-cs-text-main">/month</span>
+                </div>
+                <p className="text-cs-text-main mb-8">
+                  30% off Pay-as-you-go
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">2,855 credits included</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">$0.35 per overage credit</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Full API access</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Dedicated support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">Custom integrations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                    <span className="text-cs-text-main">SLA guarantee</span>
+                  </li>
+                </ul>
+              </Card>
+            </Link>
           </div>
 
           {/* Single Get Started Button */}
