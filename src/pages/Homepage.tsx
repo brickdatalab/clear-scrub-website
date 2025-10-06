@@ -2,6 +2,7 @@ import { Button } from "@/components/Button";
 import { ArrowRight, Zap, Brain, DollarSign, Shield, Globe, Lock, Code, Sparkles } from "lucide-react";
 import { InteractiveCodeBlock } from "@/components/InteractiveCodeBlock";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useState, useEffect } from "react";
 export const Homepage = () => {
   const heroAnimation = useScrollAnimation();
   const problemAnimation = useScrollAnimation();
@@ -11,6 +12,41 @@ export const Homepage = () => {
   const platformAnimation = useScrollAnimation();
   const complianceAnimation = useScrollAnimation();
   const ctaAnimation = useScrollAnimation();
+  
+  const [typedText, setTypedText] = useState("");
+  const [progress, setProgress] = useState(0);
+  
+  const fullText = `"status": "processed",
+"processing_time": "2.4s",
+"transactions": 247,
+"intelligence_score": 98.6`;
+
+  useEffect(() => {
+    let charIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (charIndex <= fullText.length) {
+        setTypedText(fullText.slice(0, charIndex));
+        charIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 30);
+
+    const progressInterval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(progressInterval);
+          return 100;
+        }
+        return prev + 1;
+      });
+    }, 25);
+
+    return () => {
+      clearInterval(typingInterval);
+      clearInterval(progressInterval);
+    };
+  }, []);
   return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-cs-white overflow-hidden py-24">
@@ -41,26 +77,31 @@ export const Homepage = () => {
             <div className="relative">
               <div className="bg-gradient-to-br from-cs-intelligence/10 to-cs-intelligence/5 rounded-lg p-8 border border-cs-intelligence/20 card-shadow backdrop-blur-sm">
                 <div className="space-y-4">
-                  <div className="font-mono text-sm">
+                  <div className="font-mono text-sm min-h-[120px]">
                     <div className="text-cs-intelligence/70">// API Response</div>
                     <div className="mt-2 space-y-1">
-                      <div><span style={{
-                        color: '#2C14C4'
-                      }}>status</span>: <span className="text-cs-secondary">"processed"</span>,</div>
-                      <div><span style={{
-                        color: '#2C14C4'
-                      }}>processing_time</span>: <span className="text-cs-secondary">"2.4s"</span>,</div>
-                      <div><span style={{
-                        color: '#2C14C4'
-                      }}>transactions</span>: <span className="text-cs-secondary">247</span>,</div>
-                      <div><span style={{
-                        color: '#2C14C4'
-                      }}>intelligence_score</span>: <span className="text-cs-secondary">98.6</span></div>
+                      <pre className="whitespace-pre-wrap">
+                        {typedText.split('\n').map((line, i) => {
+                          const [key, value] = line.split(': ');
+                          return (
+                            <div key={i}>
+                              {key && <span style={{ color: '#2C14C4' }}>{key}</span>}
+                              {value && <>: <span className="text-cs-secondary">{value}</span></>}
+                            </div>
+                          );
+                        })}
+                        <span className="inline-block w-2 h-4 bg-cs-intelligence/70 animate-pulse ml-0.5" />
+                      </pre>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 pt-4">
                     <div className="h-2 w-2 rounded-full bg-cs-secondary animate-pulse" />
-                    <div className="h-0.5 flex-1 bg-gradient-to-r from-cs-secondary to-cs-intelligence" />
+                    <div className="h-0.5 flex-1 bg-cs-divider-bg rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-cs-secondary to-cs-intelligence transition-all duration-300"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
                     <div className="h-2 w-2 rounded-full bg-cs-intelligence animate-pulse" />
                   </div>
                 </div>
