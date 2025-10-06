@@ -12,15 +12,12 @@ export const Homepage = () => {
   const platformAnimation = useScrollAnimation();
   const complianceAnimation = useScrollAnimation();
   const ctaAnimation = useScrollAnimation();
-  
   const [typedText, setTypedText] = useState("");
   const [progress, setProgress] = useState(0);
-  
   const fullText = `"status": "processed",
 "processing_time": "2.4s",
 "transactions": 247,
 "intelligence_score": 98.6`;
-
   useEffect(() => {
     let charIndex = 0;
     const typingInterval = setInterval(() => {
@@ -31,7 +28,6 @@ export const Homepage = () => {
         clearInterval(typingInterval);
       }
     }, 30);
-
     const progressInterval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
@@ -41,7 +37,6 @@ export const Homepage = () => {
         return prev + 1;
       });
     }, 25);
-
     return () => {
       clearInterval(typingInterval);
       clearInterval(progressInterval);
@@ -57,7 +52,7 @@ export const Homepage = () => {
           <div ref={heroAnimation.ref} className={`grid lg:grid-cols-2 gap-12 items-center scroll-fade-in ${heroAnimation.isVisible ? 'visible' : ''}`}>
             {/* Left Side - Text & CTAs */}
             <div className="space-y-8">
-              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">AI-Powered Infrastructure for Banking Data.</h1>
+              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">AI-Powered Infrastructure for Banking Data</h1>
               <p className="text-xl text-cs-text-main leading-relaxed">
                 ClearScrub delivers "Fast Intelligence": the processing speed of legacy converters combined with the insights of modern AI enrichment. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform.
               </p>
@@ -82,14 +77,14 @@ export const Homepage = () => {
                     <div className="mt-2 space-y-1">
                       <pre className="whitespace-pre-wrap">
                         {typedText.split('\n').map((line, i) => {
-                          const [key, value] = line.split(': ');
-                          return (
-                            <div key={i}>
-                              {key && <span style={{ color: '#2C14C4' }}>{key}</span>}
+                        const [key, value] = line.split(': ');
+                        return <div key={i}>
+                              {key && <span style={{
+                            color: '#2C14C4'
+                          }}>{key}</span>}
                               {value && <>: <span className="text-cs-secondary">{value}</span></>}
-                            </div>
-                          );
-                        })}
+                            </div>;
+                      })}
                         <span className="inline-block w-2 h-4 bg-cs-intelligence/70 animate-pulse ml-0.5" />
                       </pre>
                     </div>
@@ -97,10 +92,9 @@ export const Homepage = () => {
                   <div className="flex items-center gap-3 pt-4">
                     <div className="h-2 w-2 rounded-full bg-cs-secondary animate-pulse" />
                     <div className="h-0.5 flex-1 bg-cs-divider-bg rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-cs-secondary to-cs-intelligence transition-all duration-300"
-                        style={{ width: `${progress}%` }}
-                      />
+                      <div className="h-full bg-gradient-to-r from-cs-secondary to-cs-intelligence transition-all duration-300" style={{
+                      width: `${progress}%`
+                    }} />
                     </div>
                     <div className="h-2 w-2 rounded-full bg-cs-intelligence animate-pulse" />
                   </div>
