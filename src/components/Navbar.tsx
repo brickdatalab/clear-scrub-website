@@ -39,12 +39,9 @@ export function Navbar() {
             <Link to="/company" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
               Company
             </Link>
-            <Link to="/login" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
-              Sign In →
-            </Link>
             <Link to="/login">
               <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:bg-cs-primary/90 smooth-hover btn-hover">
-                Get Started Free
+                Sign In
               </button>
             </Link>
           </div>
