@@ -200,13 +200,13 @@ export const Homepage = () => {
                   <code>
                     {`{
   `}<span style={{
-                    color: '#2C14C4'
+                    color: '#09B878'
                   }}>"merchant"</span>{`: "Starbucks",
   `}<span style={{
-                    color: '#2C14C4'
+                    color: '#09B878'
                   }}>"amount"</span>{`: 4.50,
   `}<span style={{
-                    color: '#2C14C4'
+                    color: '#09B878'
                   }}>"confidence_score"</span>{`: 99.8
 }`}
                   </code>
