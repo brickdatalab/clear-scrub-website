@@ -49,9 +49,11 @@ export default function Pricing() {
                   <span className="text-cs-text-main">Email support</span>
                 </li>
               </ul>
-              <button className="w-full bg-[#006F46] hover:bg-[#005a38] text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                Current Plan
-              </button>
+              <Link to="/contact" className="block w-full">
+                <button className="w-full bg-[#006F46] hover:bg-[#005a38] text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                  Get Started
+                </button>
+              </Link>
             </Card>
 
             {/* Pro Plan */}
@@ -91,9 +93,11 @@ export default function Pricing() {
                   <span className="text-cs-text-main">Webhooks</span>
                 </li>
               </ul>
-              <button className="w-full bg-[#006F46] hover:bg-[#005a38] text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                Upgrade
-              </button>
+              <Link to="/contact" className="block w-full">
+                <button className="w-full bg-[#006F46] hover:bg-[#005a38] text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                  Get Started
+                </button>
+              </Link>
             </Card>
 
             {/* Elite Plan */}
@@ -132,9 +136,11 @@ export default function Pricing() {
                   <span className="text-cs-text-main">SLA guarantee</span>
                 </li>
               </ul>
-              <button className="w-full bg-cs-text-headline hover:bg-cs-text-headline/90 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                Upgrade
-              </button>
+              <Link to="/contact" className="block w-full">
+                <button className="w-full bg-cs-text-headline hover:bg-cs-text-headline/90 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                  Contact Sales
+                </button>
+              </Link>
             </Card>
 
             {/* Developer (Free Tier) */}
