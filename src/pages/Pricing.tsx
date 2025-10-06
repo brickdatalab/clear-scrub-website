@@ -21,6 +21,35 @@ export default function Pricing() {
       <Section background="gray" className="bg-cs-divider-bg">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {/* Developer (Free Tier) */}
+            <Card className="p-8 border-2 border-cs-g-200">
+              <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Developer</h2>
+              <div className="mb-4">
+                <span className="text-5xl font-bold text-cs-text-headline">Free</span>
+              </div>
+              <p className="text-cs-text-main mb-8">
+                Everything you need to build and test
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-2">
+                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                  <span className="text-cs-text-main">First 500 statements/month</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                  <span className="text-cs-text-main">Full API access</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                  <span className="text-cs-text-main">Sandbox environment</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
+                  <span className="text-cs-text-main">Community support</span>
+                </li>
+              </ul>
+            </Card>
+
             {/* Pay-As-You-Go */}
             <Card className="p-8 bg-[#E8F5E9] border-0">
               <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Pay-As-You-Go</h2>
@@ -49,11 +78,6 @@ export default function Pricing() {
                   <span className="text-cs-text-main">Email support</span>
                 </li>
               </ul>
-              <Link to="/contact" className="block w-full">
-                <button className="w-full bg-[#006F46] hover:bg-[#005a38] text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                  Get Started
-                </button>
-              </Link>
             </Card>
 
             {/* Pro Plan */}
@@ -93,11 +117,6 @@ export default function Pricing() {
                   <span className="text-cs-text-main">Webhooks</span>
                 </li>
               </ul>
-              <Link to="/contact" className="block w-full">
-                <button className="w-full bg-[#006F46] hover:bg-[#005a38] text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                  Get Started
-                </button>
-              </Link>
             </Card>
 
             {/* Elite Plan */}
@@ -136,46 +155,16 @@ export default function Pricing() {
                   <span className="text-cs-text-main">SLA guarantee</span>
                 </li>
               </ul>
-              <Link to="/contact" className="block w-full">
-                <button className="w-full bg-cs-text-headline hover:bg-cs-text-headline/90 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                  Contact Sales
-                </button>
-              </Link>
             </Card>
+          </div>
 
-            {/* Developer (Free Tier) */}
-            <Card className="p-8 border-2 border-cs-g-200">
-              <h2 className="text-3xl font-bold mb-4 text-cs-text-headline">Developer</h2>
-              <div className="mb-4">
-                <span className="text-5xl font-bold text-cs-text-headline">Free</span>
-              </div>
-              <p className="text-cs-text-main mb-8">
-                Everything you need to build and test
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">First 500 statements/month</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Full API access</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Sandbox environment</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="text-[#006F46] mt-1 flex-shrink-0" size={20} />
-                  <span className="text-cs-text-main">Community support</span>
-                </li>
-              </ul>
-              <Link to="/login?mode=signup">
-                <button className="w-full bg-[#006F46] hover:bg-[#005a38] text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                  Get Started Free
-                </button>
-              </Link>
-            </Card>
+          {/* Single Get Started Button */}
+          <div className="flex justify-center mt-12">
+            <Link to="/contact">
+              <button className="bg-[#006F46] hover:bg-[#005a38] text-white py-4 px-12 rounded-lg font-semibold text-lg transition-colors">
+                Get Started
+              </button>
+            </Link>
           </div>
         </Container>
       </Section>
