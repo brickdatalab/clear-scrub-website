@@ -19,31 +19,31 @@ export function Navbar() {
 
           {/* Desktop Navigation + CTA Buttons */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/features" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+            <Link to="/features" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
               Products
             </Link>
-            <Link to="/features" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+            <Link to="/features" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
               Solutions
             </Link>
             <a 
               href="https://docs.clearscrub.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors"
+              className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover"
             >
               Developers
             </a>
-            <Link to="/pricing" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+            <Link to="/pricing" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
               Pricing
             </Link>
-            <Link to="/contact" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+            <Link to="/company" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
               Company
             </Link>
-            <Link to="/login" className="font-sans font-medium text-cs-text-main hover:text-cs-primary transition-colors">
+            <Link to="/login" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
               Sign In →
             </Link>
             <Link to="/login">
-              <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:bg-cs-primary/90 transition-all duration-300">
+              <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:bg-cs-primary/90 smooth-hover btn-hover">
                 Get Started Free
               </button>
             </Link>
