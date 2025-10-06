@@ -4,10 +4,8 @@ import { Container } from '../components/Container';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { Check } from 'lucide-react';
-
 export default function Pricing() {
-  return (
-    <>
+  return <>
       <Section background="white" className="pt-32">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
@@ -173,9 +171,7 @@ export default function Pricing() {
       <Section background="white">
         <Container>
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12 text-cs-text-headline">
-              How We Compare: The End of Predatory Pricing.
-            </h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-cs-text-headline">How We Compare: The End of Predatory Pricing</h2>
             
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
@@ -196,29 +192,49 @@ export default function Pricing() {
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    { feature: 'Pricing Model', clearscrub: 'Usage-Based', workflow: 'Contracts/Subscription', legacy: 'Subscription Required' },
-                    { feature: 'Free Tier', clearscrub: 'Yes (500/month)', workflow: 'Limited Trial', legacy: 'No' },
-                    { feature: 'Processing Speed', clearscrub: '< 5 seconds', workflow: '1-4 minutes', legacy: '< 5 seconds' },
-                    { feature: 'Merchant Enrichment', clearscrub: 'Yes (Standard)', workflow: 'Yes (Expensive Add-on)', legacy: 'No' },
-                    { feature: 'Developer SDKs', clearscrub: '8 Languages', workflow: 'Limited', legacy: 'Basic API' },
-                    { feature: 'Confidence Scores', clearscrub: 'Yes', workflow: 'No', legacy: 'No' },
-                  ].map((row, i) => (
-                    <tr key={i} className="border-b border-cs-g-200">
+                  {[{
+                  feature: 'Pricing Model',
+                  clearscrub: 'Usage-Based',
+                  workflow: 'Contracts/Subscription',
+                  legacy: 'Subscription Required'
+                }, {
+                  feature: 'Free Tier',
+                  clearscrub: 'Yes (500/month)',
+                  workflow: 'Limited Trial',
+                  legacy: 'No'
+                }, {
+                  feature: 'Processing Speed',
+                  clearscrub: '< 5 seconds',
+                  workflow: '1-4 minutes',
+                  legacy: '< 5 seconds'
+                }, {
+                  feature: 'Merchant Enrichment',
+                  clearscrub: 'Yes (Standard)',
+                  workflow: 'Yes (Expensive Add-on)',
+                  legacy: 'No'
+                }, {
+                  feature: 'Developer SDKs',
+                  clearscrub: '8 Languages',
+                  workflow: 'Limited',
+                  legacy: 'Basic API'
+                }, {
+                  feature: 'Confidence Scores',
+                  clearscrub: 'Yes',
+                  workflow: 'No',
+                  legacy: 'No'
+                }].map((row, i) => <tr key={i} className="border-b border-cs-g-200">
                       <td className="py-4 px-6 font-medium text-cs-text-headline">{row.feature}</td>
                       <td className="py-4 px-6 bg-cs-intelligence/5 border-l-4 border-cs-intelligence">
                         <span className="text-cs-intelligence font-semibold">{row.clearscrub}</span>
                       </td>
                       <td className="py-4 px-6 text-cs-text-main">{row.workflow}</td>
                       <td className="py-4 px-6 text-cs-text-main">{row.legacy}</td>
-                    </tr>
-                  ))}
+                    </tr>)}
                 </tbody>
               </table>
             </div>
           </div>
         </Container>
       </Section>
-    </>
-  );
+    </>;
 }
