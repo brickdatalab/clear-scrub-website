@@ -36,9 +36,9 @@ export function Navbar() {
             <Link to="/pricing" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
               Pricing
             </Link>
-            <Link to="/login">
+            <Link to="/signup">
               <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:bg-cs-primary/90 smooth-hover btn-hover">
-                Sign In
+                Sign up
               </button>
             </Link>
           </div>
@@ -71,8 +71,8 @@ export function Navbar() {
               >
                 API Docs
               </a>
-              <Link to="/login">
-                <Button variant="primary" size="md" className="w-full hover:bg-cs-accent/80 hover:rounded-md transition-all">Sign In</Button>
+              <Link to="/signup">
+                <Button variant="primary" size="md" className="w-full hover:bg-cs-accent/80 hover:rounded-md transition-all">Sign up</Button>
               </Link>
             </div>
           </div>
