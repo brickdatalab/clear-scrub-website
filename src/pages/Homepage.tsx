@@ -52,7 +52,7 @@ export const Homepage = () => {
           <div ref={heroAnimation.ref} className={`grid lg:grid-cols-2 gap-12 items-center scroll-fade-in ${heroAnimation.isVisible ? 'visible' : ''}`}>
             {/* Left Side - Text & CTAs */}
             <div className="space-y-8">
-              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">Clean bank statements. Decision ready data.</h1>
+              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">Clean bank statements for Decision ready data.</h1>
               <p className="text-xl text-cs-text-main leading-relaxed">ClearScrub delivers state-of-the-art AI intelligence for bank statements and the processing accuracy of legacy converters. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform and AI enrichment</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
@@ -246,12 +246,8 @@ export const Homepage = () => {
     }}>
         <div className="container mx-auto px-6">
           <div ref={dxAnimation.ref} className={`text-center mb-12 scroll-fade-in ${dxAnimation.isVisible ? 'visible' : ''}`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              A Radically Better Developer Experience.
-            </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto mt-4">
-              We obsessed over the DX so you don't have to. Integrate ClearScrub in hours, not weeks.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">A Radically Better Experience.</h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto mt-4">We obsessed over the DX so you don't have to. Integrate ClearScrub in minutes, not weeks.</p>
           </div>
           
           <div className={`grid lg:grid-cols-5 gap-12 items-start scroll-fade-in ${dxAnimation.isVisible ? 'visible' : ''}`} style={{
@@ -263,7 +259,7 @@ export const Homepage = () => {
                 <div className="flex items-start gap-4">
                   <Code className="w-8 h-8 text-cs-secondary flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Stripe-Quality Documentation</h3>
+                    <h3 className="text-xl font-semibold text-white mb-2">Quality Documentation</h3>
                     <p className="text-white/80">Access interactive documentation with live API testing capabilities. We believe great DX is the foundation of great products.</p>
                   </div>
                 </div>
@@ -284,7 +280,7 @@ export const Homepage = () => {
                   <Shield className="w-8 h-8 text-cs-secondary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Sandbox and Community</h3>
-                    <p className="text-white/80">Test robustly using our sandbox environment with 50+ sample bank statements. Join our Discord community for real-time developer support.</p>
+                    <p className="text-white/80">Test robustly using our sandbox environment with 50+ sample bank statements.</p>
                   </div>
                 </div>
               </div>
