@@ -52,7 +52,7 @@ export const Homepage = () => {
           <div ref={heroAnimation.ref} className={`grid lg:grid-cols-2 gap-12 items-center scroll-fade-in ${heroAnimation.isVisible ? 'visible' : ''}`}>
             {/* Left Side - Text & CTAs */}
             <div className="space-y-8">
-              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">AI-Powered Infrastructure for Banking Data</h1>
+              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">Clean bank statements. Decision ready data.</h1>
               <p className="text-xl text-cs-text-main leading-relaxed">ClearScrub delivers state-of-the-art AI intelligence for bank statements and the processing accuracy of legacy converters. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform and AI enrichment</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
