@@ -19,21 +19,30 @@ export function Navbar() {
 
           {/* Desktop Navigation + CTA Buttons */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/features" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
+            <Link 
+              to="/features" 
+              className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-cs-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
               Products
             </Link>
-            <Link to="/features" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
+            <Link 
+              to="/features" 
+              className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-cs-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
               Solutions
             </Link>
             <a 
               href="https://docs.clearscrub.io" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover"
+              className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-cs-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               Developers
             </a>
-            <Link to="/pricing" className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover">
+            <Link 
+              to="/pricing" 
+              className="font-sans font-medium text-cs-text-main hover:text-cs-primary smooth-hover link-hover relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-cs-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
               Pricing
             </Link>
             <Link to="/login">
