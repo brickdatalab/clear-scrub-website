@@ -3,6 +3,7 @@ import { ArrowRight, Zap, Brain, DollarSign, Shield, Globe, Lock, Code, Sparkles
 import { InteractiveCodeBlock } from "@/components/InteractiveCodeBlock";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 export const Homepage = () => {
   const heroAnimation = useScrollAnimation();
   const problemAnimation = useScrollAnimation();
@@ -55,10 +56,10 @@ export const Homepage = () => {
               <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">Clean bank statements for Decision ready data.</h1>
               <p className="text-xl text-cs-text-main leading-relaxed">ClearScrub delivers state-of-the-art AI intelligence for bank statements and the processing accuracy of legacy converters. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform and AI enrichment</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
+                <Link to="/login?tab=signup" className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
                   Start Now
                   <ArrowRight className="w-5 h-5" />
-                </button>
+                </Link>
                 <button className="flex items-center justify-center gap-2 bg-white border-2 border-cs-intelligence text-cs-intelligence hover:bg-cs-intelligence/5 px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
                   Explore the Docs
                   <ArrowRight className="w-5 h-5" />
