@@ -6,6 +6,7 @@ import { Container } from '../components/Container';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { Label } from '../components/ui/label';
+import { Eye, EyeOff } from 'lucide-react';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -19,6 +20,9 @@ export default function Login() {
     password: '',
     confirmPassword: ''
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [passwordMatchError, setPasswordMatchError] = useState('');
 
   useEffect(() => {
     const mode = searchParams.get('mode');
@@ -177,31 +181,68 @@ export default function Login() {
 
               <div>
                 <Label htmlFor="password" className="text-cs-g-700 text-sm">Password</Label>
-                <input
-                  id="password"
-                  type="password"
-                  required
-                  disabled={loading}
-                  className="w-full px-3 py-2 mt-1 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
-                  placeholder="••••••••"
-                  value={formData.password}
-                  onChange={(e) => setFormData({...formData, password: e.target.value})}
-                />
+                <div className="relative">
+                  <input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    required
+                    disabled={loading}
+                    className="w-full px-3 py-2 pr-10 mt-1 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
+                    placeholder="••••••••"
+                    value={formData.password}
+                    onChange={(e) => {
+                      setFormData({...formData, password: e.target.value});
+                      if (isSignUp && formData.confirmPassword) {
+                        setPasswordMatchError(
+                          e.target.value !== formData.confirmPassword ? 'Passwords do not match' : ''
+                        );
+                      }
+                    }}
+                  />
+                  {isSignUp && (
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-cs-g-500 hover:text-cs-g-700 transition-colors"
+                    >
+                      {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                    </button>
+                  )}
+                </div>
               </div>
 
               {isSignUp && (
                 <div>
                   <Label htmlFor="confirmPassword" className="text-cs-g-700 text-sm">Confirm Password</Label>
-                  <input
-                    id="confirmPassword"
-                    type="password"
-                    required={isSignUp}
-                    disabled={loading}
-                    className="w-full px-3 py-2 mt-1 border border-cs-g-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50"
-                    placeholder="••••••••"
-                    value={formData.confirmPassword}
-                    onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
-                  />
+                  <div className="relative">
+                    <input
+                      id="confirmPassword"
+                      type={showConfirmPassword ? "text" : "password"}
+                      required={isSignUp}
+                      disabled={loading}
+                      className={`w-full px-3 py-2 pr-10 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cs-accent focus:border-transparent transition-all disabled:opacity-50 ${
+                        passwordMatchError ? 'border-red-500' : 'border-cs-g-300'
+                      }`}
+                      placeholder="••••••••"
+                      value={formData.confirmPassword}
+                      onChange={(e) => {
+                        setFormData({...formData, confirmPassword: e.target.value});
+                        setPasswordMatchError(
+                          formData.password !== e.target.value ? 'Passwords do not match' : ''
+                        );
+                      }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-cs-g-500 hover:text-cs-g-700 transition-colors"
+                    >
+                      {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                    </button>
+                  </div>
+                  {passwordMatchError && (
+                    <p className="text-xs text-red-600 mt-1">{passwordMatchError}</p>
+                  )}
                 </div>
               )}
 
