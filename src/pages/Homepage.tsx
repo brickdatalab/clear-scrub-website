@@ -60,10 +60,15 @@ export const Homepage = () => {
                   Start Now
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <button className="flex items-center justify-center gap-2 bg-white border-2 border-cs-intelligence text-cs-intelligence hover:bg-cs-intelligence/5 px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
+                <a 
+                  href="https://docs.clearscrub.io" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-white border-2 border-cs-intelligence text-cs-intelligence hover:bg-cs-intelligence/5 px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover"
+                >
                   Explore the Docs
                   <ArrowRight className="w-5 h-5" />
-                </button>
+                </a>
               </div>
             </div>
 
