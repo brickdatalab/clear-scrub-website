@@ -45,15 +45,15 @@ export const Homepage = () => {
   }, []);
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-cs-white overflow-hidden py-24">
+      <section className="relative w-full bg-cs-white overflow-hidden py-24">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 gradient-mesh" />
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div ref={heroAnimation.ref} className={`grid lg:grid-cols-2 gap-12 items-center scroll-fade-in ${heroAnimation.isVisible ? 'visible' : ''}`}>
             {/* Left Side - Text & CTAs */}
             <div className="space-y-8">
-              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">Clean bank statements for Decision ready data.</h1>
+              <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">Clean bank statements. Decision ready data.</h1>
               <p className="text-xl text-cs-text-main leading-relaxed">ClearScrub delivers state-of-the-art AI intelligence for bank statements and the processing accuracy of legacy converters. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform and AI enrichment</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/login?tab=signup" className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
@@ -105,9 +105,9 @@ export const Homepage = () => {
       </section>
 
       {/* Section: The Problem with Status Quo */}
-      <section className="py-20 bg-cs-white">
-        <div className="container mx-auto px-6">
-          <div ref={problemAnimation.ref} className={`max-w-4xl mx-auto text-center space-y-6 scroll-fade-in ${problemAnimation.isVisible ? 'visible' : ''}`}>
+      <section className="w-full py-20 bg-cs-white">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div ref={problemAnimation.ref} className={`text-center space-y-6 scroll-fade-in ${problemAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">The Evolution of Banking Data Extraction</h2>
             <p className="text-lg text-cs-text-main leading-relaxed">
               The financial services industry has long relied on established infrastructure for PDF conversion. While some providers optimized for speed, they lacked intelligent analysis. <strong>Others attempted to add intelligence by simply rebranding that same legacy infrastructure, adding complex workflows, and charging a significant premium—acting as expensive middlemen.</strong>
@@ -120,8 +120,8 @@ export const Homepage = () => {
       </section>
 
       {/* Section: Fast Intelligence Platform */}
-      <section className="py-20 bg-cs-divider-bg">
-        <div className="container mx-auto px-6">
+      <section className="w-full py-20 bg-cs-divider-bg">
+        <div className="container mx-auto px-6 max-w-7xl">
           <div ref={fastIntelAnimation.ref} className={`text-center mb-16 scroll-fade-in ${fastIntelAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">Fast Intelligence. Radically Simple Adoption.</h2>
           </div>
@@ -166,8 +166,8 @@ export const Homepage = () => {
       </section>
 
       {/* Section: Hybrid AI and Transparency */}
-      <section className="py-20 bg-cs-white">
-        <div className="container mx-auto px-6">
+      <section className="w-full py-20 bg-cs-white">
+        <div className="container mx-auto px-6 max-w-7xl">
           <div ref={hybridAiAnimation.ref} className={`text-center mb-16 scroll-fade-in ${hybridAiAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
               Transparent AI: The Hybrid Intelligence Model.
@@ -242,10 +242,10 @@ export const Homepage = () => {
       </section>
 
       {/* Section: Developer Experience (DX) */}
-      <section className="py-20" style={{
+      <section className="w-full py-20" style={{
       backgroundColor: '#2C14C4'
     }}>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 max-w-7xl">
           <div ref={dxAnimation.ref} className={`text-center mb-12 scroll-fade-in ${dxAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-white">A Radically Better Experience.</h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto mt-4">We obsessed over the DX so you don't have to. Integrate ClearScrub in minutes, not weeks.</p>
@@ -296,8 +296,8 @@ export const Homepage = () => {
       </section>
 
       {/* Section: Platform Extensions */}
-      <section className="py-20 bg-cs-divider-bg">
-        <div className="container mx-auto px-6">
+      <section className="w-full py-20 bg-cs-divider-bg">
+        <div className="container mx-auto px-6 max-w-7xl">
           <div ref={platformAnimation.ref} className={`text-center mb-16 scroll-fade-in ${platformAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
               A Complete Toolkit for Modern Finance.
@@ -345,8 +345,8 @@ export const Homepage = () => {
       </section>
 
       {/* Section: Compliance and Security */}
-      <section className="py-20 bg-cs-white">
-        <div className="container mx-auto px-6">
+      <section className="w-full py-20 bg-cs-white">
+        <div className="container mx-auto px-6 max-w-7xl">
           <div ref={complianceAnimation.ref} className={`text-center mb-16 scroll-fade-in ${complianceAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
               Compliance-First Architecture.
@@ -387,9 +387,9 @@ export const Homepage = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-cs-white">
-        <div className="container mx-auto px-6">
-          <div ref={ctaAnimation.ref} className={`text-center space-y-8 max-w-3xl mx-auto scroll-fade-in ${ctaAnimation.isVisible ? 'visible' : ''}`}>
+      <section className="w-full py-20 bg-cs-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div ref={ctaAnimation.ref} className={`text-center space-y-8 scroll-fade-in ${ctaAnimation.isVisible ? 'visible' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-cs-text-headline">
               Ready to implement Fast Intelligence?
             </h2>
