@@ -46,7 +46,7 @@ export function Navbar() {
               Pricing
             </Link>
             <Link to="/login">
-              <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:brightness-110 smooth-hover btn-hover transition-all">
+              <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:brightness-125 smooth-hover btn-hover transition-all">
                 Sign In
               </button>
             </Link>
