@@ -397,9 +397,9 @@ export const Homepage = () => {
               Experience radically better technology with transparent, usage-based pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-6 text-lg smooth-hover btn-hover">
+              <Link to="/login?tab=signup" className="bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-6 text-lg smooth-hover btn-hover inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium">
                 Get Started Free <ArrowRight className="ml-2" />
-              </Button>
+              </Link>
               <Button variant="outline" className="px-8 py-6 text-lg smooth-hover">
                 Contact Sales <ArrowRight className="ml-2" />
               </Button>
