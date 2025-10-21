@@ -7,6 +7,26 @@ import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { Label } from '../components/ui/label';
 import { Eye, EyeOff } from 'lucide-react';
+import { z } from 'zod';
+
+const signUpSchema = z.object({
+  name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be less than 100 characters'),
+  email: z.string().trim().email('Invalid email address').max(255, 'Email must be less than 255 characters'),
+  password: z.string()
+    .min(8, 'Password must be at least 8 characters')
+    .max(128, 'Password must be less than 128 characters')
+    .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
+    .regex(/[0-9]/, 'Password must contain at least one number'),
+  confirmPassword: z.string()
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords don't match",
+  path: ["confirmPassword"],
+});
+
+const signInSchema = z.object({
+  email: z.string().trim().email('Invalid email address').max(255, 'Email must be less than 255 characters'),
+  password: z.string().min(1, 'Password is required')
+});
 
 export default function Login() {
   const navigate = useNavigate();
@@ -38,26 +58,21 @@ export default function Login() {
 
     try {
       if (isSignUp) {
-        // Sign up validation
-        if (formData.password !== formData.confirmPassword) {
-          setError('Passwords do not match');
-          setLoading(false);
-          return;
-        }
-
-        if (formData.password.length < 6) {
-          setError('Password must be at least 6 characters');
-          setLoading(false);
-          return;
-        }
+        // VALIDATE INPUT FIRST
+        const validatedData = signUpSchema.parse({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+          confirmPassword: formData.confirmPassword
+        });
 
         // Sign up with Supabase
         const { data, error: signUpError } = await supabase.auth.signUp({
-          email: formData.email,
-          password: formData.password,
+          email: validatedData.email,
+          password: validatedData.password,
           options: {
             data: {
-              name: formData.name,
+              name: validatedData.name,
             },
             emailRedirectTo: `${window.location.origin}/dashboard`,
           },
@@ -75,10 +90,16 @@ export default function Login() {
           }
         }
       } else {
+        // VALIDATE INPUT FIRST
+        const validatedData = signInSchema.parse({
+          email: formData.email,
+          password: formData.password
+        });
+
         // Sign in with Supabase
         const { data, error: signInError } = await supabase.auth.signInWithPassword({
-          email: formData.email,
-          password: formData.password,
+          email: validatedData.email,
+          password: validatedData.password,
         });
 
         if (signInError) throw signInError;
@@ -89,7 +110,11 @@ export default function Login() {
         }
       }
     } catch (err: any) {
-      setError(err.message || 'An error occurred');
+      if (err instanceof z.ZodError) {
+        setError(err.issues[0].message);
+      } else {
+        setError(err.message || 'An error occurred');
+      }
     } finally {
       setLoading(false);
     }
