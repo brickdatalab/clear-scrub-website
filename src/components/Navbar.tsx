@@ -45,11 +45,11 @@ export function Navbar() {
             >
               Pricing
             </Link>
-            <Link to="/login">
+            <a href="https://dashboard.clearscrub.io/login">
               <button className="font-sans font-semibold px-6 py-2.5 text-white bg-cs-primary rounded-md hover:brightness-125 smooth-hover btn-hover transition-all">
                 Sign In
               </button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -80,9 +80,9 @@ export function Navbar() {
               >
                 API Docs
               </a>
-              <Link to="/login">
+              <a href="https://dashboard.clearscrub.io/login">
                 <Button variant="primary" size="md" className="w-full hover:bg-cs-accent/80 hover:rounded-md transition-all">Sign In</Button>
-              </Link>
+              </a>
             </div>
           </div>
         )}

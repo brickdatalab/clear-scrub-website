@@ -56,10 +56,10 @@ export const Homepage = () => {
               <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">Clean bank statements. Decision ready data.</h1>
               <p className="text-xl text-cs-text-main leading-relaxed">ClearScrub delivers state-of-the-art AI intelligence for bank statements and the processing accuracy of legacy converters. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform and AI enrichment</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/login?tab=signup" className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
+                <a href="https://dashboard.clearscrub.io/signup" className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
                   Start Now
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
                 <a 
                   href="https://docs.clearscrub.io" 
                   target="_blank" 
@@ -402,9 +402,9 @@ export const Homepage = () => {
               Experience radically better technology with transparent, usage-based pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/login?tab=signup" className="bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-6 text-lg smooth-hover btn-hover inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium">
+              <a href="https://dashboard.clearscrub.io/signup" className="bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-6 text-lg smooth-hover btn-hover inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium">
                 Get Started Free <ArrowRight className="ml-2" />
-              </Link>
+              </a>
               <Button variant="outline" className="px-8 py-6 text-lg smooth-hover">
                 Contact Sales <ArrowRight className="ml-2" />
               </Button>
