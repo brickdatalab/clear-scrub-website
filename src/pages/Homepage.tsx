@@ -56,7 +56,7 @@ export const Homepage = () => {
               <h1 className="text-6xl lg:text-7xl font-extrabold text-cs-text-headline leading-tight">Clean bank statements. Decision ready data.</h1>
               <p className="text-xl text-cs-text-main leading-relaxed">ClearScrub delivers state-of-the-art AI intelligence for bank statements and the processing accuracy of legacy converters. Process bank statements in seconds, categorize transactions, and access business intelligence through our radically simple API platform and AI enrichment</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://dashboard.clearscrub.io/signup" className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
+                <a href="https://dashboard.clearscrub.io/login" className="flex items-center justify-center gap-2 bg-cs-primary hover:bg-cs-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl smooth-hover btn-hover">
                   Start Now
                   <ArrowRight className="w-5 h-5" />
                 </a>
